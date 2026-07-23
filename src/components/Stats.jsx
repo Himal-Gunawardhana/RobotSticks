@@ -1,47 +1,64 @@
 import React from 'react';
 import CountUpPkg from 'react-countup';
-const CountUp = CountUpPkg.default || CountUpPkg;
 import { motion } from 'framer-motion';
 
-const Stats = () => {
-  const statsData = [
-    { label: 'Facebook Followers', value: 15400, prefix: '+', suffix: '' },
-    { label: 'TikTok Followers', value: 22000, prefix: '+', suffix: '' },
-    { label: 'Registered Students', value: 1250, prefix: '', suffix: '' },
-    { label: 'Waitlist', value: 340, prefix: '', suffix: '+' }
-  ];
+const CountUp = CountUpPkg.default || CountUpPkg;
 
+const statsData = [
+  { label: 'Facebook Followers', value: 15400, prefix: '', suffix: '+', emoji: '👍', color: 'var(--stickem-blue)' },
+  { label: 'TikTok Followers',   value: 22000, prefix: '', suffix: '+', emoji: '🎵', color: 'var(--stickem-red)' },
+  { label: 'Registered Students',value: 1250,  prefix: '', suffix: '',  emoji: '🎓', color: 'var(--stickem-green)' },
+  { label: 'Students on Waitlist',value: 340,  prefix: '', suffix: '+', emoji: '⏳', color: 'var(--stickem-yellow)' },
+];
+
+const Stats = () => {
   return (
-    <section style={{ padding: '4rem 0', background: 'var(--lighter-bg)', borderTop: '2px solid var(--glass-border)' }}>
+    <section className="stats-section">
       <div className="container">
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
-          gap: '2rem',
-          textAlign: 'center'
-        }}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{ textAlign: 'center', marginBottom: '2.5rem' }}
+        >
+          <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', marginBottom: '0.5rem' }}>
+            Growing Every <span className="text-highlight-red">Day</span> 📈
+          </h2>
+          <p style={{ color: 'rgba(15,23,42,0.7)', fontSize: '1.05rem' }}>Join a thriving STEAM community</p>
+        </motion.div>
+
+        <div className="stats-grid">
           {statsData.map((stat, index) => (
-            <motion.div 
+            <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="stat-card"
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="glass-card"
-              style={{ padding: '2rem 1rem' }}
+              transition={{ delay: index * 0.1, duration: 0.5, type: 'spring', stiffness: 100 }}
+              whileHover={{ y: -5, scale: 1.03 }}
+              style={{ borderTop: `4px solid ${stat.color}` }}
             >
-              <h3 style={{ fontSize: '2.5rem', color: 'var(--stickem-yellow)', marginBottom: '0.5rem' }}>
-                <CountUp 
-                  end={stat.value} 
-                  duration={2.5} 
-                  separator="," 
+              <motion.div
+                style={{ fontSize: '2.2rem', marginBottom: '0.25rem' }}
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, delay: index * 0.3, repeat: Infinity, repeatDelay: 3 }}
+              >
+                {stat.emoji}
+              </motion.div>
+              <div className="stat-value" style={{ color: stat.color }}>
+                <CountUp
+                  end={stat.value}
+                  duration={2.5}
+                  separator=","
                   enableScrollSpy={true}
                   scrollSpyOnce={true}
                   prefix={stat.prefix}
                   suffix={stat.suffix}
                 />
-              </h3>
-              <p style={{ fontWeight: '500', color: 'rgba(15,23,42,0.8)' }}>{stat.label}</p>
+              </div>
+              <div className="stat-label">{stat.label}</div>
             </motion.div>
           ))}
         </div>
