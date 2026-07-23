@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Stick'Em Inspired Solid Colors */
+  --stickem-blue: #2B6BA7;
+  --stickem-purple: #9A58A5;
+  --stickem-yellow: #F4AA1A;
+  --stickem-green: #6BB251;
+  --stickem-red: #D83A31;
+  --stickem-lightblue: #3CB4E5;
+  --stickem-pink: #EE9797;
+  
+  --dark-bg: #0F172A; /* Deep navy background */
+  --darker-bg: #0B1120;
+  --light-text: #F8F9FA;
+  
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Solid Text Highlights instead of gradients */
+.text-highlight-yellow {
+  color: var(--stickem-yellow);
+}
+
+.text-highlight-blue {
+  color: var(--stickem-lightblue);
+}
+
+.text-highlight-red {
+  color: var(--stickem-red);
+}
+
+.text-highlight-green {
+  color: var(--stickem-green);
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid var(--glass-border); /* Solid border lines */
+  border-radius: 1rem;
+}
+
+/* Solid Buttons */
+.btn-primary {
+  background-color: var(--stickem-red);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem; /* Sharper edges for a more solid, blocky look */
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid var(--stickem-red);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.3); /* Solid drop shadow */
+}
+
+.btn-primary:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.4);
+}
+
+.btn-primary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--stickem-lightblue);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid var(--stickem-lightblue);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+.btn-secondary:hover {
+  background-color: var(--stickem-lightblue);
+  color: var(--darker-bg);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.4);
+}
+
+.btn-secondary:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: 2px solid #1DA851;
+  z-index: 1000;
+  transition: all 0.2s ease;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.3);
+}
+
+.whatsapp-btn:hover {
+  transform: translate(-2px, -2px) scale(1.05);
+  box-shadow: 6px 6px 0px rgba(0,0,0,0.4);
+}
+
+.whatsapp-btn:active {
+  transform: translate(2px, 2px) scale(0.95);
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.4);
+}
