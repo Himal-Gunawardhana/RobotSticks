@@ -1,5 +1,6 @@
 import React from 'react';
-import CountUp from 'react-countup';
+import CountUpPkg from 'react-countup';
+const CountUp = CountUpPkg.default || CountUpPkg;
 import { motion } from 'framer-motion';
 
 const Stats = () => {
@@ -11,7 +12,7 @@ const Stats = () => {
   ];
 
   return (
-    <section style={{ padding: '4rem 0', background: 'var(--darker-bg)', borderTop: '1px solid var(--glass-border)' }}>
+    <section style={{ padding: '4rem 0', background: 'var(--lighter-bg)', borderTop: '2px solid var(--glass-border)' }}>
       <div className="container">
         <div style={{ 
           display: 'grid', 
@@ -40,7 +41,7 @@ const Stats = () => {
                   suffix={stat.suffix}
                 />
               </h3>
-              <p style={{ fontWeight: '500', color: 'rgba(255,255,255,0.8)' }}>{stat.label}</p>
+              <p style={{ fontWeight: '500', color: 'rgba(15,23,42,0.8)' }}>{stat.label}</p>
             </motion.div>
           ))}
         </div>

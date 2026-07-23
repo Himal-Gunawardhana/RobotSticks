@@ -24,25 +24,20 @@ const Navbar = () => {
         right: 0,
         zIndex: 100,
         padding: scrolled ? '1rem 2rem' : '1.5rem 2rem',
-        background: scrolled ? 'rgba(4, 41, 58, 0.9)' : 'transparent',
+        background: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
         backdropFilter: scrolled ? 'blur(10px)' : 'none',
         transition: 'all 0.3s ease',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.1)' : 'none'
+        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.1)' : 'none'
       }}
     >
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <img src="/Logo.svg" alt="RobotSticks Logo" style={{ height: '40px' }} />
-            <h1 style={{ fontSize: '1.8rem', margin: 0, color: 'var(--stickem-yellow)' }}>
-              RobotSticks
-            </h1>
-          </div>
+        <a href="#" style={{ display: 'flex', alignItems: 'center' }}>
+          <img src="/Logo.svg" alt="RobotSticks Logo" style={{ height: '40px' }} />
         </a>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <a href="#about" style={{ fontWeight: 500, transition: 'color 0.3s', color: 'white' }}>About STEAM</a>
-          <a href="#partnership" style={{ fontWeight: 500, transition: 'color 0.3s', color: 'white' }}>Partnership</a>
-          <a href="#packages" style={{ fontWeight: 500, transition: 'color 0.3s', color: 'white' }}>Packages</a>
+          <a href="#about" style={{ fontWeight: 500, transition: 'color 0.3s', color: 'var(--dark-text)' }}>About STEAM</a>
+          <a href="#partnership" style={{ fontWeight: 500, transition: 'color 0.3s', color: 'var(--dark-text)' }}>Partnership</a>
+          <a href="#packages" style={{ fontWeight: 500, transition: 'color 0.3s', color: 'var(--dark-text)' }}>Packages</a>
           <button className="btn-primary" onClick={() => window.location.href='#register'}>
             Register Now
           </button>

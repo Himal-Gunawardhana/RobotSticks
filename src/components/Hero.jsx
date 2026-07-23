@@ -8,7 +8,7 @@ const Hero = () => {
       display: 'flex', 
       alignItems: 'center', 
       paddingTop: '80px',
-      background: 'var(--dark-bg)'
+      background: 'var(--light-bg)'
     }}>
       <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}>
         <motion.div 
@@ -20,7 +20,7 @@ const Hero = () => {
             Empowering the Future with <br />
             <span className="text-highlight-red">STEAM Education</span>
           </h1>
-          <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: 'rgba(255,255,255,0.8)' }}>
+          <p style={{ fontSize: '1.2rem', marginBottom: '2rem', color: 'rgba(15,23,42,0.8)' }}>
             Science, Technology, Engineering, Arts, and Mathematics (STEAM) is more than just subjects. It's a way of thinking. At RobotSticks, we prepare students for tomorrow by giving them the tools to solve real-world problems today through interactive robotics and entrepreneurship.
           </p>
           <div style={{ display: 'flex', gap: '1rem' }}>
@@ -44,7 +44,7 @@ const Hero = () => {
               height: 'auto',
               borderRadius: '1rem',
               boxShadow: '8px 8px 0px rgba(0,0,0,0.5)',
-              border: '4px solid var(--darker-bg)',
+              border: '4px solid var(--dark-text)',
               objectFit: 'cover'
             }} 
           />

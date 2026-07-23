@@ -62,13 +62,13 @@ const Packages = () => {
   ];
 
   return (
-    <section id="packages" style={{ padding: '6rem 0', background: 'var(--darker-bg)' }}>
+    <section id="packages" style={{ padding: '6rem 0', background: 'var(--lighter-bg)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 style={{ fontSize: '3rem', marginBottom: '1rem' }}>
             Choose Your <span className="text-highlight-yellow">Journey</span>
           </h2>
-          <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.8)' }}>
+          <p style={{ fontSize: '1.2rem', color: 'rgba(15,23,42,0.8)' }}>
             Four expertly crafted packages based on world-class curriculum.
           </p>
         </div>
@@ -97,21 +97,21 @@ const Packages = () => {
               whileHover={{ y: -10 }}
             >
               <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: pkg.color }}>{pkg.name}</h3>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.7)', marginBottom: '1.5rem' }}>{pkg.duration}</p>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.7)', marginBottom: '1.5rem' }}>{pkg.duration}</p>
               <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '2rem' }}>{pkg.price}</div>
               
               <ul style={{ listStyle: 'none', padding: 0, marginBottom: '2rem', flexGrow: 1 }}>
                 {pkg.features.map((feature, i) => (
                   <li key={i} style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
                     <span style={{ color: pkg.color }}>✓</span>
-                    <span style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.9)' }}>{feature}</span>
+                    <span style={{ fontSize: '0.95rem', color: 'rgba(15,23,42,0.9)' }}>{feature}</span>
                   </li>
                 ))}
               </ul>
 
               <button 
                 className="btn-primary" 
-                style={{ width: '100%', backgroundColor: pkg.color, color: pkg.id === 3 ? 'var(--dark-bg)' : 'white', border: `2px solid ${pkg.color}` }}
+                style={{ width: '100%', backgroundColor: pkg.color, color: pkg.id === 3 ? 'var(--dark-text)' : 'white', border: `2px solid ${pkg.color}` }}
                 onClick={() => window.location.href='#register'}
               >
                 Enroll Now

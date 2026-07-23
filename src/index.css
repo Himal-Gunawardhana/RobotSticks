@@ -10,12 +10,12 @@
   --stickem-lightblue: #3CB4E5;
   --stickem-pink: #EE9797;
   
-  --dark-bg: #0F172A; /* Deep navy background */
-  --darker-bg: #0B1120;
-  --light-text: #F8F9FA;
+  --light-bg: #FFFFFF; /* White background */
+  --lighter-bg: #F8F9FA; /* Off-white for alternating sections */
+  --dark-text: #0F172A; /* Deep navy text for contrast */
   
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -26,8 +26,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--dark-bg);
-  color: var(--light-text);
+  background-color: var(--light-bg);
+  color: var(--dark-text);
   overflow-x: hidden;
   line-height: 1.6;
 }
