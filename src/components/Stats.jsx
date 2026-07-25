@@ -4,14 +4,28 @@ import { motion } from 'framer-motion';
 
 const CountUp = CountUpPkg.default || CountUpPkg;
 
-const statsData = [
-  { label: 'Facebook Followers', value: 15400, prefix: '', suffix: '+', emoji: '👍', color: 'var(--stickem-blue)' },
-  { label: 'TikTok Followers',   value: 22000, prefix: '', suffix: '+', emoji: '🎵', color: 'var(--stickem-red)' },
-  { label: 'Registered Students',value: 1250,  prefix: '', suffix: '',  emoji: '🎓', color: 'var(--stickem-green)' },
-  { label: 'Students on Waitlist',value: 340,  prefix: '', suffix: '+', emoji: '⏳', color: 'var(--stickem-yellow)' },
-];
-
 const Stats = () => {
+  const whatsappMembers = 1000;
+  const waitlist = Math.floor(whatsappMembers / 2);
+  const maxStudents = 160;
+  const registeredStudents = 145; // Current registered students Example (approaching max)
+
+  const statsData = [
+    { label: 'Facebook Followers', value: 6500, prefix: '', suffix: '+', emoji: '👍', color: 'var(--stickem-blue)' },
+    { label: 'WhatsApp Community', value: whatsappMembers, prefix: '', suffix: '+', emoji: '💬', color: 'var(--stickem-green)' },
+    { 
+      label: 'Registered Students', 
+      value: registeredStudents, 
+      max: maxStudents, 
+      prefix: '', 
+      suffix: ` / ${maxStudents}`, 
+      emoji: '🎓', 
+      color: 'var(--stickem-red)',
+      isBar: true
+    },
+    { label: 'Students on Waitlist', value: waitlist, prefix: '', suffix: '+', emoji: '⏳', color: 'var(--stickem-yellow)' },
+  ];
+
   return (
     <section className="stats-section">
       <div className="container">
@@ -58,7 +72,20 @@ const Stats = () => {
                   suffix={stat.suffix}
                 />
               </div>
-              <div className="stat-label">{stat.label}</div>
+              
+              {stat.isBar && (
+                <div style={{ marginTop: '0.5rem', marginBottom: '0.75rem', width: '100%', height: '10px', background: 'rgba(0,0,0,0.08)', borderRadius: '5px', overflow: 'hidden', boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.1)' }}>
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${(stat.value / stat.max) * 100}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
+                    style={{ height: '100%', background: stat.color, borderRadius: '5px' }}
+                  />
+                </div>
+              )}
+              
+              <div className="stat-label" style={{ marginTop: stat.isBar ? '0' : '0.5rem' }}>{stat.label}</div>
             </motion.div>
           ))}
         </div>
