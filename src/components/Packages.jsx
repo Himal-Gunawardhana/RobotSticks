@@ -317,7 +317,7 @@ const Packages = () => {
               <motion.button
                 whileHover={{ scale: 1.04, rotate: -1 }}
                 whileTap={{ scale: 0.96 }}
-                onClick={() => window.location.href = '#register'}
+                onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
                 style={{
                   width: '100%', padding: '0.7rem',
                   background: pkg.color, color: pkg.id === 3 ? 'var(--dark-text)' : 'white',

@@ -52,7 +52,7 @@ const Navbar = () => {
           ))}
           <motion.button
             className="btn-primary"
-            onClick={() => window.location.href = '#register'}
+            onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -84,7 +84,7 @@ const Navbar = () => {
             <a href="#about" onClick={closeMenu}>About STEAM</a>
             <a href="#partnership" onClick={closeMenu}>Partnership</a>
             <a href="#packages" onClick={closeMenu}>Packages</a>
-            <button className="btn-primary" onClick={() => { closeMenu(); window.location.href = '#register'; }}>
+            <button className="btn-primary" onClick={() => { closeMenu(); window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank'); }}>
               Register Now 🚀
             </button>
           </motion.div>

@@ -111,7 +111,7 @@ function App() {
                 Register Now 🚀
               </motion.a>
               <motion.a
-                href={`https://wa.me/94767863340`}
+                href={`https://wa.me/94705189525`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.07, rotate: 1 }}
@@ -164,7 +164,7 @@ function App() {
             <a href="#about" style={{ color: 'rgba(15,23,42,0.6)' }}>About STEAM</a>
             <a href="#partnership" style={{ color: 'rgba(15,23,42,0.6)' }}>Partnership</a>
             <a href="#packages" style={{ color: 'rgba(15,23,42,0.6)' }}>Packages</a>
-            <a href="#register" style={{ color: 'rgba(15,23,42,0.6)' }}>Register</a>
+            <a href="https://forms.gle/6wwrdLxbqCtPyiAy5" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(15,23,42,0.6)' }}>Register</a>
           </div>
           <p style={{ color: 'rgba(15,23,42,0.4)', fontSize: '0.85rem' }}>
             © {new Date().getFullYear()} RobotSticks Academy. All rights reserved.
