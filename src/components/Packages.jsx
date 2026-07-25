@@ -17,7 +17,7 @@ const packages = [
         discounted: '4,000',
         unit: 'LKR/hr',
         seatsMax: 5,
-        seatsTaken: 3,
+        seatsTaken: 1,
         seatLabel: 'Individual Seats'
       },
       {
@@ -55,7 +55,7 @@ const packages = [
         discounted: '2,000',
         unit: 'LKR/hr/student',
         seatsMax: 80,
-        seatsTaken: 20,
+        seatsTaken: 12,
         seatLabel: 'Total Seats'
       }
     ],
@@ -119,7 +119,7 @@ const packages = [
         discounted: '2,000',
         unit: 'LKR/hr/student',
         seatsMax: 80,
-        seatsTaken: 20,
+        seatsTaken: 10,
         seatLabel: 'Total Seats'
       }
     ],
@@ -180,6 +180,36 @@ const Packages = () => {
           <p style={{ color: 'rgba(15,23,42,0.7)', fontSize: '1.05rem', maxWidth: '550px', margin: '0 auto' }}>
             Four expertly crafted programs based on world-class Stick'Em curriculum.
           </p>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            style={{
+              background: 'rgba(239, 68, 68, 0.1)', 
+              border: '1px solid rgba(239, 68, 68, 0.3)',
+              borderRadius: '0.8rem',
+              padding: '1rem 1.5rem',
+              maxWidth: '600px',
+              margin: '1.5rem auto 0',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '1rem',
+              textAlign: 'left',
+              boxShadow: '0 4px 6px rgba(239, 68, 68, 0.05)'
+            }}
+          >
+            <div style={{ fontSize: '2.2rem' }}>🚨</div>
+            <div>
+              <div style={{ fontWeight: 800, color: 'var(--stickem-red)', marginBottom: '0.2rem', fontSize: '1.1rem' }}>
+                Registration Fee: 5,000 LKR / Student
+              </div>
+              <div style={{ fontSize: '0.95rem', color: 'rgba(15,23,42,0.8)', fontWeight: 500 }}>
+                Please secure your spot immediately! Very limited seats are available and they are filling up fast.
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         <div className="packages-grid" style={{ alignItems: 'stretch' }}>

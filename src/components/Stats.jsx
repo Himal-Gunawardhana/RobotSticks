@@ -7,8 +7,8 @@ const CountUp = CountUpPkg.default || CountUpPkg;
 const Stats = () => {
   const whatsappMembers = 1000;
   const waitlist = Math.floor(whatsappMembers / 2);
-  const maxStudents = 160;
-  const registeredStudents = 20; // Current registered students
+  const maxStudents = 180;
+  const registeredStudents = 30; // Current registered students
 
   const statsData = [
     { label: 'Facebook Followers', value: 6500, prefix: '', suffix: '+', emoji: '👍', color: 'var(--stickem-blue)' },
