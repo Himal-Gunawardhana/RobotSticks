@@ -6,11 +6,30 @@ const packages = [
     id: 1,
     name: 'Junior Foundation',
     tagline: '3 Months',
-    grade: 'Grades 6–8',
-    price: 'LKR 15,000',
-    unit: '/month',
+    grade: 'Grades 6–9',
+    location: 'Home visits around Colombo',
     color: 'var(--stickem-green)',
     emoji: '🌱',
+    pricingOptions: [
+      {
+        type: 'Individual (Max 1 Student)',
+        original: '5,000',
+        discounted: '4,000',
+        unit: 'LKR/hr',
+        seatsMax: 5,
+        seatsTaken: 3,
+        seatLabel: 'Individual Seats'
+      },
+      {
+        type: 'Group (< 5 Students)',
+        original: '4,000',
+        discounted: '3,000',
+        unit: 'LKR/hr/student',
+        seatsMax: 5,
+        seatsTaken: 2,
+        seatLabel: 'Group Classes'
+      }
+    ],
     features: [
       'Intro to STEAM & Safety',
       'Structures & Stability',
@@ -23,12 +42,23 @@ const packages = [
     id: 2,
     name: 'Junior Extended',
     tagline: '6 Months',
-    grade: 'Grades 6–8',
-    price: 'LKR 12,000',
-    unit: '/month',
+    grade: 'Grades 6–9',
+    location: 'Nugegoda (Siyochem Smart Classroom)',
+    schedule: 'Starts Sep 1st week 2026 • Sat/Sun • Max 2 hrs/class',
     color: 'var(--stickem-blue)',
     emoji: '🚀',
     popular: true,
+    pricingOptions: [
+      {
+        type: 'Class Enrollment',
+        original: '3,000',
+        discounted: '2,000',
+        unit: 'LKR/hr/student',
+        seatsMax: 80,
+        seatsTaken: 20,
+        seatLabel: 'Total Seats'
+      }
+    ],
     features: [
       'Design Thinking & Empathy',
       'Motion & Control Sprint',
@@ -41,11 +71,30 @@ const packages = [
     id: 3,
     name: 'Senior Foundation',
     tagline: '3 Months',
-    grade: 'Grades 9–11',
-    price: 'LKR 18,000',
-    unit: '/month',
+    grade: 'Grades 9–12',
+    location: 'Home visits around Colombo',
     color: 'var(--stickem-yellow)',
     emoji: '⚙️',
+    pricingOptions: [
+      {
+        type: 'Individual (Max 1 Student)',
+        original: '5,000',
+        discounted: '4,000',
+        unit: 'LKR/hr',
+        seatsMax: 5,
+        seatsTaken: 3,
+        seatLabel: 'Individual Seats'
+      },
+      {
+        type: 'Group (< 5 Students)',
+        original: '4,000',
+        discounted: '3,000',
+        unit: 'LKR/hr/student',
+        seatsMax: 5,
+        seatsTaken: 2,
+        seatLabel: 'Group Classes'
+      }
+    ],
     features: [
       'Mechanical Design Depth',
       'Electronics & Power Basics',
@@ -58,11 +107,22 @@ const packages = [
     id: 4,
     name: 'Senior Extended',
     tagline: '6 Months',
-    grade: 'Grades 9–11',
-    price: 'LKR 15,000',
-    unit: '/month',
+    grade: 'Grades 9–12',
+    location: 'Nugegoda (Siyochem Smart Classroom)',
+    schedule: 'Starts Sep 1st week 2026 • Sat/Sun • Max 2 hrs/class',
     color: 'var(--stickem-red)',
     emoji: '🏆',
+    pricingOptions: [
+      {
+        type: 'Class Enrollment',
+        original: '3,000',
+        discounted: '2,000',
+        unit: 'LKR/hr/student',
+        seatsMax: 80,
+        seatsTaken: 20,
+        seatLabel: 'Total Seats'
+      }
+    ],
     features: [
       'Strategic Project Scoping',
       'Technical Architecture',
@@ -72,6 +132,27 @@ const packages = [
     ],
   },
 ];
+
+const ProgressBar = ({ taken, max, label, color }) => {
+  const percentage = Math.min(100, Math.max(0, (taken / max) * 100));
+  return (
+    <div style={{ marginBottom: '0.4rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.2rem', color: 'rgba(15,23,42,0.8)' }}>
+        <span style={{ fontWeight: 600 }}>{label}</span>
+        <span style={{ fontWeight: 700 }}>{taken} / {max}</span>
+      </div>
+      <div style={{ width: '100%', height: '6px', background: 'rgba(15,23,42,0.1)', borderRadius: '3px', overflow: 'hidden' }}>
+        <motion.div 
+          initial={{ width: 0 }}
+          whileInView={{ width: `${percentage}%` }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, delay: 0.2 }}
+          style={{ height: '100%', background: color, borderRadius: '3px' }}
+        />
+      </div>
+    </div>
+  );
+};
 
 const Packages = () => {
   return (
@@ -101,7 +182,7 @@ const Packages = () => {
           </p>
         </motion.div>
 
-        <div className="packages-grid">
+        <div className="packages-grid" style={{ alignItems: 'stretch' }}>
           {packages.map((pkg, index) => (
             <motion.div
               key={pkg.id}
@@ -111,7 +192,7 @@ const Packages = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5, type: 'spring', stiffness: 90 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              style={{ borderTop: `5px solid ${pkg.color}`, position: 'relative' }}
+              style={{ borderTop: `5px solid ${pkg.color}`, position: 'relative', display: 'flex', flexDirection: 'column' }}
             >
               {/* Popular badge */}
               {pkg.popular && (
@@ -151,25 +232,53 @@ const Packages = () => {
                 </div>
               </div>
 
-              {/* Price */}
-              <div style={{ marginBottom: '1.5rem' }}>
-                <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.6rem', color: 'var(--dark-text)' }}>
-                  {pkg.price}
-                </span>
-                <span style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.55)', marginLeft: '2px' }}>{pkg.unit}</span>
+              {/* Price & Options */}
+              <div style={{ marginBottom: '1.25rem' }}>
+                {pkg.location && (
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.7)', marginBottom: '0.4rem', display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
+                    <span>📍</span>
+                    <span>{pkg.location}</span>
+                  </div>
+                )}
+                {pkg.schedule && (
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.7)', marginBottom: '0.8rem', display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
+                    <span>🗓️</span>
+                    <span>{pkg.schedule}</span>
+                  </div>
+                )}
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '1rem' }}>
+                  {pkg.pricingOptions.map((opt, i) => (
+                    <div key={i} style={{ background: 'rgba(15,23,42,0.03)', padding: '0.75rem', borderRadius: '0.5rem', border: `1px solid ${pkg.color}33` }}>
+                      <div style={{ fontSize: '0.85rem', fontWeight: 700, color: pkg.color, marginBottom: '0.2rem' }}>{opt.type}</div>
+                      <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem' }}>
+                        <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.25rem', color: 'var(--dark-text)' }}>
+                          {opt.discounted}
+                        </span>
+                        <span style={{ fontSize: '0.8rem', color: 'rgba(15,23,42,0.55)' }}>{opt.unit}</span>
+                        {opt.original && (
+                          <span style={{ textDecoration: 'line-through', fontSize: '0.8rem', color: 'rgba(15,23,42,0.4)', marginLeft: 'auto' }}>
+                            {opt.original}
+                          </span>
+                        )}
+                      </div>
+                      <ProgressBar taken={opt.seatsTaken} max={opt.seatsMax} label={opt.seatLabel} color={pkg.color} />
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Features */}
-              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.75rem', flexGrow: 1 }}>
+              <ul style={{ listStyle: 'none', padding: 0, marginBottom: '1.5rem', flexGrow: 1 }}>
                 {pkg.features.map((feat, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', marginBottom: '0.7rem' }}>
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', marginBottom: '0.6rem' }}>
                     <span style={{
                       display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
                       width: '18px', height: '18px', borderRadius: '50%',
                       background: pkg.color, color: 'white', fontSize: '0.6rem',
                       fontWeight: 800, flexShrink: 0, marginTop: '2px'
                     }}>✓</span>
-                    <span style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.85)' }}>{feat}</span>
+                    <span style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.85)' }}>{feat}</span>
                   </li>
                 ))}
               </ul>
@@ -184,7 +293,8 @@ const Packages = () => {
                   background: pkg.color, color: pkg.id === 3 ? 'var(--dark-text)' : 'white',
                   border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
                   fontFamily: 'Outfit', fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
-                  boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
+                  boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s',
+                  marginTop: 'auto'
                 }}
               >
                 Enroll Now 🎓
