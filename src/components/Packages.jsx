@@ -52,7 +52,7 @@ const packages = [
       {
         type: 'Class Enrollment',
         original: '3,000',
-        discounted: '2,000',
+        discounted: '1,000',
         unit: 'LKR/hr/student',
         seatsMax: 80,
         seatsTaken: 12,
@@ -116,7 +116,7 @@ const packages = [
       {
         type: 'Class Enrollment',
         original: '3,000',
-        discounted: '2,000',
+        discounted: '1,000',
         unit: 'LKR/hr/student',
         seatsMax: 80,
         seatsTaken: 10,
