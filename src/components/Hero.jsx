@@ -21,16 +21,6 @@ const Bubble = ({ size, color, top, left, delay, duration }) => (
   />
 );
 
-// Star / sparkle decoration
-const Sparkle = ({ top, left, color, delay }) => (
-  <motion.div
-    style={{ position: 'absolute', top, left, fontSize: '1.4rem', zIndex: 0, pointerEvents: 'none' }}
-    animate={{ scale: [1, 1.5, 1], opacity: [1, 0.4, 1], rotate: [0, 180, 360] }}
-    transition={{ duration: 3, delay, repeat: Infinity, ease: 'easeInOut' }}
-  >
-    ✦
-  </motion.div>
-);
 
 const Hero = () => {
   const bubbles = [
@@ -42,11 +32,6 @@ const Hero = () => {
     { size: '55px',  color: 'var(--stickem-lightblue)', top: '60%', left: '92%', delay: 0.8, duration: 6.5 },
   ];
 
-  const sparkles = [
-    { top: '20%', left: '18%', color: 'var(--stickem-yellow)', delay: 0 },
-    { top: '45%', left: '85%', color: 'var(--stickem-red)',    delay: 1 },
-    { top: '75%', left: '20%', color: 'var(--stickem-green)',  delay: 0.6 },
-  ];
 
   const textVariants = {
     hidden: { opacity: 0, y: 40 },
@@ -65,7 +50,7 @@ const Hero = () => {
     <section id="about" className="hero-section" style={{ position: 'relative' }}>
       {/* Decorative bubbles */}
       {bubbles.map((b, i) => <Bubble key={i} {...b} />)}
-      {sparkles.map((s, i) => <Sparkle key={i} {...s} />)}
+
 
       <div className="container hero-grid" style={{ position: 'relative', zIndex: 1 }}>
         {/* Left: text */}
