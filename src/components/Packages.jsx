@@ -5,7 +5,7 @@ const packages = [
   {
     id: 1,
     name: 'Junior Foundation',
-    tagline: '3 Months',
+    tagline: '6 Months',
     grade: 'Grades 6–9',
     location: 'Home visits around Colombo',
     color: 'var(--stickem-green)',
@@ -41,7 +41,7 @@ const packages = [
   {
     id: 2,
     name: 'Junior Extended',
-    tagline: '6 Months',
+    tagline: '10 Months',
     grade: 'Grades 6–9',
     location: 'Nugegoda (Siyochem Smart Classroom)',
     schedule: 'Starts Sep 1st week 2026 • Sat/Sun • Max 2 hrs/class',
@@ -70,7 +70,7 @@ const packages = [
   {
     id: 3,
     name: 'Senior Foundation',
-    tagline: '3 Months',
+    tagline: '6 Months',
     grade: 'Grades 9–12',
     location: 'Home visits around Colombo',
     color: 'var(--stickem-yellow)',
@@ -106,7 +106,7 @@ const packages = [
   {
     id: 4,
     name: 'Senior Extended',
-    tagline: '6 Months',
+    tagline: '10 Months',
     grade: 'Grades 9–12',
     location: 'Nugegoda (Siyochem Smart Classroom)',
     schedule: 'Starts Sep 1st week 2026 • Sat/Sun • Max 2 hrs/class',
