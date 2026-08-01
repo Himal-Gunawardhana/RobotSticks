@@ -24,12 +24,12 @@ const Bubble = ({ size, color, top, left, delay, duration }) => (
 
 const Hero = () => {
   const bubbles = [
-    { size: '90px',  color: 'var(--stickem-yellow)',  top: '15%', left: '8%',  delay: 0,   duration: 5 },
-    { size: '60px',  color: 'var(--stickem-red)',     top: '70%', left: '5%',  delay: 1,   duration: 6 },
-    { size: '50px',  color: 'var(--stickem-green)',   top: '30%', left: '90%', delay: 0.5, duration: 4.5 },
-    { size: '75px',  color: 'var(--stickem-blue)',    top: '80%', left: '88%', delay: 1.5, duration: 5.5 },
-    { size: '40px',  color: 'var(--stickem-purple)',  top: '10%', left: '75%', delay: 2,   duration: 4 },
-    { size: '55px',  color: 'var(--stickem-lightblue)', top: '60%', left: '92%', delay: 0.8, duration: 6.5 },
+    { size: '90px', color: 'var(--stickem-yellow)', top: '15%', left: '8%', delay: 0, duration: 5 },
+    { size: '60px', color: 'var(--stickem-red)', top: '70%', left: '5%', delay: 1, duration: 6 },
+    { size: '50px', color: 'var(--stickem-green)', top: '30%', left: '90%', delay: 0.5, duration: 4.5 },
+    { size: '75px', color: 'var(--stickem-blue)', top: '80%', left: '88%', delay: 1.5, duration: 5.5 },
+    { size: '40px', color: 'var(--stickem-purple)', top: '10%', left: '75%', delay: 2, duration: 4 },
+    { size: '55px', color: 'var(--stickem-lightblue)', top: '60%', left: '92%', delay: 0.8, duration: 6.5 },
   ];
 
 
@@ -81,7 +81,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p className="hero-desc" custom={2} variants={textVariants} initial="hidden" animate="visible">
-            Science, Technology, Engineering, Arts & Mathematics — it's more than subjects, it's a <strong>way of thinking</strong>. At RobotSticks, we prepare students for tomorrow by giving them hands-on robotics tools and an entrepreneurial mindset.
+            Science, Technology, Engineering, Arts & Mathematics it's more than subjects, it's a <strong>way of thinking</strong>. At RobotSticks, we prepare students for tomorrow by giving them hands-on robotics tools and an entrepreneurial mindset.
           </motion.p>
 
           <motion.div className="hero-buttons" custom={3} variants={textVariants} initial="hidden" animate="visible">
@@ -110,8 +110,8 @@ const Hero = () => {
           >
             {[
               { emoji: '🏆', text: 'Award-winning Kits', color: 'var(--stickem-yellow)' },
-              { emoji: '🧠', text: 'Critical Thinking',   color: 'var(--stickem-blue)'   },
-              { emoji: '🚀', text: 'Future Leaders',      color: 'var(--stickem-red)'    },
+              { emoji: '🧠', text: 'Critical Thinking', color: 'var(--stickem-blue)' },
+              { emoji: '🚀', text: 'Future Leaders', color: 'var(--stickem-red)' },
             ].map(({ emoji, text, color }) => (
               <motion.span
                 key={text}
