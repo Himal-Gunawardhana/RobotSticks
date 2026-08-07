@@ -22,8 +22,8 @@ const packages = [
       },
       {
         type: 'Group (< 5 Students)',
-        original: '4,000',
-        discounted: '3,000',
+        original: '3,500',
+        discounted: '2,500',
         unit: 'LKR/hr/student',
         seatsMax: 5,
         seatsTaken: 2,
@@ -51,8 +51,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Class Enrollment',
-        original: '3,000',
-        discounted: '1,000',
+        original: '1,200',
+        discounted: '800',
         unit: 'LKR/hr/student',
         seatsMax: 80,
         seatsTaken: 12,
@@ -87,8 +87,8 @@ const packages = [
       },
       {
         type: 'Group (< 5 Students)',
-        original: '4,000',
-        discounted: '3,000',
+        original: '3,500',
+        discounted: '2,500',
         unit: 'LKR/hr/student',
         seatsMax: 5,
         seatsTaken: 2,
@@ -115,8 +115,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Class Enrollment',
-        original: '3,000',
-        discounted: '1,000',
+        original: '1,200',
+        discounted: '800',
         unit: 'LKR/hr/student',
         seatsMax: 80,
         seatsTaken: 10,
