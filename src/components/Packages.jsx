@@ -3,6 +3,34 @@ import { motion } from 'framer-motion';
 
 const packages = [
   {
+    id: 0,
+    name: 'Online Robotics & AI',
+    tagline: 'Learn from Home',
+    grade: 'Age 11-16',
+    location: '100% Online',
+    color: '#8b5cf6',
+    emoji: '💻',
+    badge: '🏆 BEST OPTION',
+    pricingOptions: [
+      {
+        type: 'Monthly Subscription',
+        original: '4,000',
+        discounted: '3,500',
+        unit: 'LKR/month/child',
+        seatsMax: 100,
+        seatsTaken: 34,
+        seatLabel: 'Active Students'
+      }
+    ],
+    features: [
+      'Robotics & AI theory and practicals',
+      'Hands-on experience from home',
+      'Requires purchasing a Stick\'Em kit',
+      'Share a kit with up to 4 nearby students',
+      'Interactive online sessions',
+    ],
+  },
+  {
     id: 1,
     name: 'Junior Foundation',
     tagline: '6 Months',
@@ -178,7 +206,7 @@ const Packages = () => {
             🎒
           </h2>
           <p style={{ color: 'rgba(15,23,42,0.7)', fontSize: '1.05rem', maxWidth: '550px', margin: '0 auto' }}>
-            Four expertly crafted programs based on world-class Stick'Em curriculum.
+            Expertly crafted programs based on world-class Stick'Em curriculum.
           </p>
 
 
@@ -197,20 +225,20 @@ const Packages = () => {
               style={{ borderTop: `5px solid ${pkg.color}`, position: 'relative', display: 'flex', flexDirection: 'column' }}
             >
               {/* Popular badge */}
-              {pkg.popular && (
+              {(pkg.popular || pkg.badge) && (
                 <motion.div
                   animate={{ rotate: [0, 5, -5, 0] }}
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
                   style={{
                     position: 'absolute', top: '-14px', right: '16px',
-                    background: 'var(--stickem-red)', color: 'white',
+                    background: pkg.badge ? '#8b5cf6' : 'var(--stickem-red)', color: 'white',
                     fontSize: '0.7rem', fontWeight: 700, fontFamily: 'Outfit',
                     borderRadius: '0.4rem', padding: '0.25rem 0.65rem',
                     border: '2px solid var(--dark-text)',
                     boxShadow: '2px 2px 0px rgba(0,0,0,0.25)'
                   }}
                 >
-                  ⭐ POPULAR
+                  {pkg.badge || '⭐ POPULAR'}
                 </motion.div>
               )}
 
