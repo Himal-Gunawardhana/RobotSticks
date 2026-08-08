@@ -212,8 +212,130 @@ const Packages = () => {
 
         </motion.div>
 
+        {/* Horizontal Online Package */}
+        {packages.filter(p => p.id === 0).map((pkg, index) => (
+          <motion.div
+            key={pkg.id}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, type: 'spring', stiffness: 90 }}
+            whileHover={{ y: -4, scale: 1.01 }}
+            style={{ 
+              borderTop: `5px solid ${pkg.color}`, 
+              position: 'relative', 
+              background: 'white',
+              borderRadius: '1.5rem',
+              padding: '2.5rem',
+              boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+              marginBottom: '3rem',
+              width: '100%',
+              display: 'flex',
+              flexDirection: 'column'
+            }}
+            className="horizontal-package"
+          >
+            {/* Badge */}
+            {(pkg.popular || pkg.badge) && (
+              <motion.div
+                animate={{ rotate: [0, 5, -5, 0] }}
+                transition={{ duration: 2, repeat: Infinity, repeatDelay: 1 }}
+                style={{
+                  position: 'absolute', top: '-14px', left: '2rem',
+                  background: pkg.badge ? '#8b5cf6' : 'var(--stickem-red)', color: 'white',
+                  fontSize: '0.85rem', fontWeight: 700, fontFamily: 'Outfit',
+                  borderRadius: '0.4rem', padding: '0.35rem 0.85rem',
+                  border: '2px solid var(--dark-text)',
+                  boxShadow: '2px 2px 0px rgba(0,0,0,0.25)'
+                }}
+              >
+                {pkg.badge || '⭐ POPULAR'}
+              </motion.div>
+            )}
+
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2.5rem', marginTop: '1rem', alignItems: 'center' }}>
+              {/* Column 1: Header */}
+              <div style={{ flex: '1 1 250px' }}>
+                <motion.div
+                  style={{ fontSize: '3rem', marginBottom: '0.5rem' }}
+                  animate={{ y: [0, -5, 0] }}
+                  transition={{ duration: 2, delay: index * 0.3, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  {pkg.emoji}
+                </motion.div>
+                <h3 style={{ fontSize: '1.75rem', color: pkg.color, marginBottom: '0.5rem' }}>{pkg.name}</h3>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                  <span style={{
+                    background: pkg.color + '22', color: pkg.color,
+                    border: `1px solid ${pkg.color}`, borderRadius: '0.4rem',
+                    padding: '0.2rem 0.55rem', fontSize: '0.85rem', fontWeight: 600
+                  }}>{pkg.tagline}</span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.6)', fontWeight: 500 }}>{pkg.grade}</span>
+                </div>
+                {pkg.location && (
+                  <div style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.7)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                    <span>📍</span> <span>{pkg.location}</span>
+                  </div>
+                )}
+              </div>
+
+              {/* Column 2: Features */}
+              <div style={{ flex: '2 1 300px' }}>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                  {pkg.features.map((feat, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                      <span style={{
+                        display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                        width: '20px', height: '20px', borderRadius: '50%',
+                        background: pkg.color, color: 'white', fontSize: '0.7rem',
+                        fontWeight: 800, flexShrink: 0, marginTop: '2px'
+                      }}>✓</span>
+                      <span style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.85)' }}>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Column 3: Price & CTA */}
+              <div style={{ flex: '1 1 250px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {pkg.pricingOptions.map((opt, i) => (
+                  <div key={i} style={{ background: 'rgba(15,23,42,0.03)', padding: '1rem', borderRadius: '0.75rem', border: `1px solid ${pkg.color}33` }}>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: pkg.color, marginBottom: '0.4rem' }}>{opt.type}</div>
+                    <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem' }}>
+                      <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.75rem', color: 'var(--dark-text)' }}>
+                        {opt.discounted}
+                      </span>
+                      <span style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.55)' }}>{opt.unit}</span>
+                      {opt.original && (
+                        <span style={{ textDecoration: 'line-through', fontSize: '0.9rem', color: 'rgba(15,23,42,0.4)', marginLeft: 'auto' }}>
+                          {opt.original}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                
+                <motion.button
+                  whileHover={{ scale: 1.04, rotate: -1 }}
+                  whileTap={{ scale: 0.96 }}
+                  onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                  style={{
+                    width: '100%', padding: '1rem',
+                    background: pkg.color, color: 'white',
+                    border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
+                    fontFamily: 'Outfit', fontWeight: 700, fontSize: '1.1rem', cursor: 'pointer',
+                    boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
+                  }}
+                >
+                  Enroll Online Now 🎓
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+
         <div className="packages-grid" style={{ alignItems: 'stretch' }}>
-          {packages.map((pkg, index) => (
+          {packages.filter(p => p.id !== 0).map((pkg, index) => (
             <motion.div
               key={pkg.id}
               className="package-card"
