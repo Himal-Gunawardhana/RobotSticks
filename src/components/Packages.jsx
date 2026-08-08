@@ -28,6 +28,8 @@ const packages = [
       'Requires purchasing a Stick\'Em kit',
       'Share a kit with up to 4 nearby students',
       'Interactive online sessions',
+      'Final pitch day & exam with industry experts',
+      'Must travel to Colombo for final day awards & certificates with your innovation',
     ],
   },
   {
