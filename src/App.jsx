@@ -111,7 +111,7 @@ function App() {
                 Register Now 🚀
               </motion.a>
               <motion.a
-                href={`https://wa.me/94705189525`}
+                href={`https://wa.me/message/4G4ZERPPUXOCH1`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.07, rotate: 1 }}
