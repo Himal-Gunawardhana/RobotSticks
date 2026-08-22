@@ -1,10 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const packages = [
   {
     id: 1,
-    name: 'Kids Robotics & AI',
+    name: 'Kids STEAM',
     tagline: '6 Months • 1st Month Free',
     grade: 'Age 7-10',
     location: 'Online / Physical (WP & SP)',
@@ -447,6 +448,58 @@ const Packages = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          style={{
+            marginTop: '4rem',
+            padding: '2.5rem 2rem',
+            background: 'white',
+            borderRadius: '1.5rem',
+            textAlign: 'center',
+            boxShadow: '0 15px 40px rgba(0,0,0,0.08)',
+            borderTop: '5px solid #25D366',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem'
+          }}
+        >
+          <h3 style={{ fontSize: '1.75rem', color: 'var(--dark-text)', margin: 0 }}>
+            Looking for Group or Individual Classes?
+          </h3>
+          <p style={{ color: 'rgba(15,23,42,0.7)', margin: 0, maxWidth: '600px', fontSize: '1.05rem', lineHeight: '1.6' }}>
+            We also offer tailored individual and small group classes to fit your specific needs. Please contact our team via WhatsApp to discuss personalized arrangements!
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05, rotate: -1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.open('https://wa.me/message/4G4ZERPPUXOCH1', '_blank')}
+            style={{
+              background: '#25D366',
+              color: 'white',
+              border: 'none',
+              borderRadius: '2rem',
+              padding: '0.8rem 2.5rem',
+              fontSize: '1.1rem',
+              fontWeight: 700,
+              fontFamily: 'Outfit',
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.6rem',
+              boxShadow: '0 8px 20px rgba(37, 211, 102, 0.3)',
+              marginTop: '1rem',
+              transition: 'all 0.2s'
+            }}
+          >
+            <FaWhatsapp size={22} />
+            Contact on WhatsApp
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
