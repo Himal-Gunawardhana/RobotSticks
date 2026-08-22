@@ -7,26 +7,36 @@ const packages = [
     name: 'Kids Robotics & AI',
     tagline: '6 Months • 1st Month Free',
     grade: 'Age 7-10',
-    location: 'Online or Physical',
+    location: 'Online / Physical (WP & SP)',
     color: '#8b5cf6',
     emoji: '🧸',
     badge: '🚀 NEW ENTRY',
     pricingOptions: [
       {
-        type: '6 Month Course',
+        type: 'Online Plan',
         original: '30,000',
         discounted: '18,000',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 15,
-        seatLabel: 'Available Seats'
+        seatLabel: 'Online Seats'
+      },
+      {
+        type: 'Physical Plan',
+        original: '42,000',
+        discounted: '30,000',
+        unit: 'LKR',
+        seatsMax: 40,
+        seatsTaken: 25,
+        seatLabel: 'Physical Seats'
       }
     ],
     features: [
-      '1st month completely FREE (No kit needed)',
-      'Choose Online or Physical classes',
+      '1st month completely FREE & Online for everyone',
+      'Online Plan: Buy kit individually or share with 4 friends',
+      'Physical Plan: Kits provided (1 kit per 4 students)',
+      'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
       'Payable in 6 easy installments',
-      'Online: Buy kit individually or share with 4 friends after month 1',
       'Fun, interactive basics of Robotics & AI'
     ],
   },
@@ -35,26 +45,36 @@ const packages = [
     name: 'Junior Robotics & AI',
     tagline: '6 Months • 1st Month Free',
     grade: 'Age 11-13',
-    location: 'Online or Physical',
+    location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-green)',
     emoji: '🌱',
     popular: true,
     pricingOptions: [
       {
-        type: '6 Month Course',
+        type: 'Online Plan',
         original: '30,000',
         discounted: '18,000',
         unit: 'LKR',
         seatsMax: 60,
         seatsTaken: 42,
-        seatLabel: 'Available Seats'
+        seatLabel: 'Online Seats'
+      },
+      {
+        type: 'Physical Plan',
+        original: '42,000',
+        discounted: '30,000',
+        unit: 'LKR',
+        seatsMax: 40,
+        seatsTaken: 18,
+        seatLabel: 'Physical Seats'
       }
     ],
     features: [
-      '1st month completely FREE (No kit needed)',
-      'Choose Online or Physical classes',
+      '1st month completely FREE & Online for everyone',
+      'Online Plan: Buy kit individually or share with 4 friends',
+      'Physical Plan: Kits provided (1 kit per 4 students)',
+      'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
       'Payable in 6 easy installments',
-      'Online: Buy kit individually or share with 4 friends after month 1',
       'Intro to STEAM, Structures & Sensors'
     ],
   },
@@ -63,25 +83,35 @@ const packages = [
     name: 'Senior Robotics & AI',
     tagline: '6 Months • 1st Month Free',
     grade: 'Age 14-16',
-    location: 'Online or Physical',
+    location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-blue)',
     emoji: '⚙️',
     pricingOptions: [
       {
-        type: '6 Month Course',
+        type: 'Online Plan',
         original: '48,000',
         discounted: '24,000',
         unit: 'LKR',
         seatsMax: 50,
         seatsTaken: 25,
-        seatLabel: 'Available Seats'
+        seatLabel: 'Online Seats'
+      },
+      {
+        type: 'Physical Plan',
+        original: '54,000',
+        discounted: '40,000',
+        unit: 'LKR',
+        seatsMax: 40,
+        seatsTaken: 12,
+        seatLabel: 'Physical Seats'
       }
     ],
     features: [
-      '1st month completely FREE (No kit needed)',
-      'Choose Online or Physical classes',
+      '1st month completely FREE & Online for everyone',
+      'Online Plan: Buy kit individually or share with 4 friends',
+      'Physical Plan: Kits provided (1 kit per 4 students)',
+      'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
       'Payable in 6 easy installments',
-      'Online: Buy kit individually or share with 4 friends after month 1',
       'Mechanical Design & Programming Control Flow'
     ],
   },
@@ -90,25 +120,35 @@ const packages = [
     name: 'Advanced Robotics & AI',
     tagline: '6 Months • 1st Month Free',
     grade: 'Age 17-19',
-    location: 'Online or Physical',
+    location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-red)',
     emoji: '🚀',
     pricingOptions: [
       {
-        type: '6 Month Course',
+        type: 'Online Plan',
         original: '48,000',
         discounted: '24,000',
         unit: 'LKR',
         seatsMax: 30,
         seatsTaken: 10,
-        seatLabel: 'Available Seats'
+        seatLabel: 'Online Seats'
+      },
+      {
+        type: 'Physical Plan',
+        original: '54,000',
+        discounted: '40,000',
+        unit: 'LKR',
+        seatsMax: 40,
+        seatsTaken: 15,
+        seatLabel: 'Physical Seats'
       }
     ],
     features: [
-      '1st month completely FREE (No kit needed)',
-      'Choose Online or Physical classes',
+      '1st month completely FREE & Online for everyone',
+      'Online Plan: Buy kit individually or share with 4 friends',
+      'Physical Plan: Kits provided (1 kit per 4 students)',
+      'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
       'Payable in 6 easy installments',
-      'Online: Buy kit individually or share with 4 friends after month 1',
       'Strategic Project Scoping & Technical Architecture'
     ],
   }
