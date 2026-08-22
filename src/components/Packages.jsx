@@ -3,164 +3,115 @@ import { motion } from 'framer-motion';
 
 const packages = [
   {
-    id: 0,
-    name: 'Online Robotics & AI',
-    tagline: 'Learn from Home',
-    grade: 'Age 11-16',
-    location: '100% Online',
-    color: '#8b5cf6',
-    emoji: '💻',
-    badge: '🏆 BEST OPTION',
-    pricingOptions: [
-      {
-        type: 'Monthly Subscription',
-        original: '4,000',
-        discounted: '3,500',
-        unit: 'LKR/month/child',
-        seatsMax: 100,
-        seatsTaken: 34,
-        seatLabel: 'Active Students'
-      }
-    ],
-    features: [
-      'Robotics & AI theory and practicals',
-      'Hands-on experience from home',
-      'Requires purchasing a Stick\'Em kit',
-      'Share a kit with up to 4 nearby students',
-      'Interactive online sessions',
-      'Final pitch day & exam with industry experts',
-      'Must travel to Colombo for final day awards & certificates with your innovation',
-    ],
-  },
-  {
     id: 1,
-    name: 'Junior Foundation',
-    tagline: '6 Months',
-    grade: 'Age 11-13',
-    location: 'Home visits around Colombo',
-    color: 'var(--stickem-green)',
-    emoji: '🌱',
+    name: 'Kids Robotics & AI',
+    tagline: '6 Months • 1st Month Free',
+    grade: 'Age 7-10',
+    location: 'Online or Physical',
+    color: '#8b5cf6',
+    emoji: '🧸',
+    badge: '🚀 NEW ENTRY',
     pricingOptions: [
       {
-        type: 'Individual (Max 1 Student)',
-        original: '5,000',
-        discounted: '4,000',
-        unit: 'LKR/hr',
-        seatsMax: 5,
-        seatsTaken: 1,
-        seatLabel: 'Individual Seats'
-      },
-      {
-        type: 'Group (< 5 Students)',
-        original: '3,500',
-        discounted: '2,500',
-        unit: 'LKR/hr/student',
-        seatsMax: 5,
-        seatsTaken: 2,
-        seatLabel: 'Group Classes'
+        type: '6 Month Course',
+        original: '30,000',
+        discounted: '18,000',
+        unit: 'LKR',
+        seatsMax: 40,
+        seatsTaken: 15,
+        seatLabel: 'Available Seats'
       }
     ],
     features: [
-      'Intro to STEAM & Safety',
-      'Structures & Stability',
-      'Basic Sensors & Inputs',
-      'Mini Robot Friend Build',
-      'Demo Day Rehearsal',
+      '1st month completely FREE (No kit needed)',
+      'Choose Online or Physical classes',
+      'Payable in 6 easy installments',
+      'Online: Buy kit individually or share with 4 friends after month 1',
+      'Fun, interactive basics of Robotics & AI'
     ],
   },
   {
     id: 2,
-    name: 'Junior Extended',
-    tagline: '10 Months',
+    name: 'Junior Robotics & AI',
+    tagline: '6 Months • 1st Month Free',
     grade: 'Age 11-13',
-    location: 'Nugegoda (Siyochem Smart Classroom)',
-    schedule: 'Starts Sep 1st week 2026 • Sat/Sun • Max 2 hrs/class',
-    color: 'var(--stickem-blue)',
-    emoji: '🚀',
+    location: 'Online or Physical',
+    color: 'var(--stickem-green)',
+    emoji: '🌱',
     popular: true,
     pricingOptions: [
       {
-        type: 'Class Enrollment',
-        original: '1,200',
-        discounted: '800',
-        unit: 'LKR/hr/student',
-        seatsMax: 80,
-        seatsTaken: 12,
-        seatLabel: 'Total Seats'
+        type: '6 Month Course',
+        original: '30,000',
+        discounted: '18,000',
+        unit: 'LKR',
+        seatsMax: 60,
+        seatsTaken: 42,
+        seatLabel: 'Available Seats'
       }
     ],
     features: [
-      'Design Thinking & Empathy',
-      'Motion & Control Sprint',
-      'Reliability Testing',
-      'Storytelling & Pitches',
-      'Mock Competition Simulation',
+      '1st month completely FREE (No kit needed)',
+      'Choose Online or Physical classes',
+      'Payable in 6 easy installments',
+      'Online: Buy kit individually or share with 4 friends after month 1',
+      'Intro to STEAM, Structures & Sensors'
     ],
   },
   {
     id: 3,
-    name: 'Senior Foundation',
-    tagline: '6 Months',
+    name: 'Senior Robotics & AI',
+    tagline: '6 Months • 1st Month Free',
     grade: 'Age 14-16',
-    location: 'Home visits around Colombo',
-    color: 'var(--stickem-yellow)',
+    location: 'Online or Physical',
+    color: 'var(--stickem-blue)',
     emoji: '⚙️',
     pricingOptions: [
       {
-        type: 'Individual (Max 1 Student)',
-        original: '5,000',
-        discounted: '4,000',
-        unit: 'LKR/hr',
-        seatsMax: 5,
-        seatsTaken: 3,
-        seatLabel: 'Individual Seats'
-      },
-      {
-        type: 'Group (< 5 Students)',
-        original: '3,500',
-        discounted: '2,500',
-        unit: 'LKR/hr/student',
-        seatsMax: 5,
-        seatsTaken: 2,
-        seatLabel: 'Group Classes'
+        type: '6 Month Course',
+        original: '48,000',
+        discounted: '24,000',
+        unit: 'LKR',
+        seatsMax: 50,
+        seatsTaken: 25,
+        seatLabel: 'Available Seats'
       }
     ],
     features: [
-      'Mechanical Design Depth',
-      'Electronics & Power Basics',
-      'Programming & Control Flow',
-      'Lean Entrepreneurship Intro',
-      'Pitch Basics & Docs',
+      '1st month completely FREE (No kit needed)',
+      'Choose Online or Physical classes',
+      'Payable in 6 easy installments',
+      'Online: Buy kit individually or share with 4 friends after month 1',
+      'Mechanical Design & Programming Control Flow'
     ],
   },
   {
     id: 4,
-    name: 'Senior Extended',
-    tagline: '10 Months',
-    grade: 'Age 14-16',
-    location: 'Nugegoda (Siyochem Smart Classroom)',
-    schedule: 'Starts Sep 1st week 2026 • Sat/Sun • Max 2 hrs/class',
+    name: 'Advanced Robotics & AI',
+    tagline: '6 Months • 1st Month Free',
+    grade: 'Age 17-19',
+    location: 'Online or Physical',
     color: 'var(--stickem-red)',
-    emoji: '🏆',
+    emoji: '🚀',
     pricingOptions: [
       {
-        type: 'Class Enrollment',
-        original: '1,200',
-        discounted: '800',
-        unit: 'LKR/hr/student',
-        seatsMax: 80,
+        type: '6 Month Course',
+        original: '48,000',
+        discounted: '24,000',
+        unit: 'LKR',
+        seatsMax: 30,
         seatsTaken: 10,
-        seatLabel: 'Total Seats'
+        seatLabel: 'Available Seats'
       }
     ],
     features: [
-      'Strategic Project Scoping',
-      'Technical Architecture',
-      'Test, Measure, Improve',
-      'Pitch Deck Drafting',
-      'National/International Sim.',
+      '1st month completely FREE (No kit needed)',
+      'Choose Online or Physical classes',
+      'Payable in 6 easy installments',
+      'Online: Buy kit individually or share with 4 friends after month 1',
+      'Strategic Project Scoping & Technical Architecture'
     ],
-  },
+  }
 ];
 
 const ProgressBar = ({ taken, max, label, color }) => {
