@@ -15,8 +15,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '30,000',
-        discounted: '18,000',
+        original: '20,000',
+        discounted: '15,000',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 15,
@@ -24,8 +24,8 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '42,000',
-        discounted: '30,000',
+        original: '30,000',
+        discounted: '25,000',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 25,
@@ -53,8 +53,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '30,000',
-        discounted: '18,000',
+        original: '25,000',
+        discounted: '20,000',
         unit: 'LKR',
         seatsMax: 60,
         seatsTaken: 42,
@@ -62,7 +62,7 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '42,000',
+        original: '35,000',
         discounted: '30,000',
         unit: 'LKR',
         seatsMax: 40,
@@ -90,8 +90,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '48,000',
-        discounted: '24,000',
+        original: '30,000',
+        discounted: '25,000',
         unit: 'LKR',
         seatsMax: 50,
         seatsTaken: 25,
@@ -99,8 +99,8 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '54,000',
-        discounted: '40,000',
+        original: '40,000',
+        discounted: '35,000',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 12,
@@ -127,8 +127,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '48,000',
-        discounted: '24,000',
+        original: '30,000',
+        discounted: '25,000',
         unit: 'LKR',
         seatsMax: 30,
         seatsTaken: 10,
@@ -136,7 +136,7 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '54,000',
+        original: '45,000',
         discounted: '40,000',
         unit: 'LKR',
         seatsMax: 40,
