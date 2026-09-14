@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
+
+const getMonthlyPrice = (priceStr) => {
+  if (!priceStr) return null;
+  const num = parseInt(priceStr.replace(/,/g, ''), 10);
+  return (num / 5).toLocaleString();
+};
 
 const packages = [
   {
@@ -177,6 +183,8 @@ const ProgressBar = ({ taken, max, label, color }) => {
 };
 
 const Packages = () => {
+  const [paymentMode, setPaymentMode] = useState('monthly');
+
   return (
     <section id="packages" className="packages-section">
       <div className="container">
@@ -199,10 +207,31 @@ const Packages = () => {
             </motion.span>{' '}
             🎒
           </h2>
-          <p style={{ color: 'rgba(15,23,42,0.7)', fontSize: '1.05rem', maxWidth: '550px', margin: '0 auto' }}>
+          <p style={{ color: 'rgba(15,23,42,0.7)', fontSize: '1.05rem', maxWidth: '550px', margin: '0 auto', marginBottom: '2rem' }}>
             Expertly crafted programs based on world-class Stick'Em curriculum.
           </p>
 
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem', alignItems: 'center', gap: '1rem' }}>
+            <span style={{ fontWeight: paymentMode === 'monthly' ? 700 : 500, color: paymentMode === 'monthly' ? 'var(--dark-text)' : 'gray', cursor: 'pointer' }} onClick={() => setPaymentMode('monthly')}>Monthly Fee</span>
+            <div 
+              onClick={() => setPaymentMode(paymentMode === 'monthly' ? 'full' : 'monthly')}
+              style={{ 
+                width: '60px', height: '32px', background: paymentMode === 'monthly' ? '#8b5cf6' : '#25D366', 
+                borderRadius: '16px', position: 'relative', cursor: 'pointer', transition: 'all 0.3s ease'
+              }}
+            >
+              <motion.div 
+                layout
+                transition={{ type: "spring", stiffness: 700, damping: 30 }}
+                style={{
+                  width: '24px', height: '24px', background: 'white', borderRadius: '50%',
+                  position: 'absolute', top: '4px', left: paymentMode === 'monthly' ? '4px' : '32px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)'
+                }}
+              />
+            </div>
+            <span style={{ fontWeight: paymentMode === 'full' ? 700 : 500, color: paymentMode === 'full' ? 'var(--dark-text)' : 'gray', cursor: 'pointer' }} onClick={() => setPaymentMode('full')}>6-Month Full Fee</span>
+          </div>
 
         </motion.div>
 
@@ -297,12 +326,14 @@ const Packages = () => {
                     <div style={{ fontSize: '0.9rem', fontWeight: 700, color: pkg.color, marginBottom: '0.4rem' }}>{opt.type}</div>
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem' }}>
                       <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.75rem', color: 'var(--dark-text)' }}>
-                        {opt.discounted}
+                        {paymentMode === 'monthly' ? getMonthlyPrice(opt.discounted) : opt.discounted}
                       </span>
-                      <span style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.55)' }}>{opt.unit}</span>
+                      <span style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.55)' }}>
+                        {opt.unit} {paymentMode === 'monthly' ? '/ mo' : ''}
+                      </span>
                       {opt.original && (
                         <span style={{ textDecoration: 'line-through', fontSize: '0.9rem', color: 'rgba(15,23,42,0.4)', marginLeft: 'auto' }}>
-                          {opt.original}
+                          {paymentMode === 'monthly' ? getMonthlyPrice(opt.original) : opt.original}
                         </span>
                       )}
                     </div>
@@ -399,12 +430,14 @@ const Packages = () => {
                       <div style={{ fontSize: '0.85rem', fontWeight: 700, color: pkg.color, marginBottom: '0.2rem' }}>{opt.type}</div>
                       <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.4rem' }}>
                         <span style={{ fontFamily: 'Outfit', fontWeight: 800, fontSize: '1.25rem', color: 'var(--dark-text)' }}>
-                          {opt.discounted}
+                          {paymentMode === 'monthly' ? getMonthlyPrice(opt.discounted) : opt.discounted}
                         </span>
-                        <span style={{ fontSize: '0.8rem', color: 'rgba(15,23,42,0.55)' }}>{opt.unit}</span>
+                        <span style={{ fontSize: '0.8rem', color: 'rgba(15,23,42,0.55)' }}>
+                          {opt.unit} {paymentMode === 'monthly' ? '/ mo' : ''}
+                        </span>
                         {opt.original && (
                           <span style={{ textDecoration: 'line-through', fontSize: '0.8rem', color: 'rgba(15,23,42,0.4)', marginLeft: 'auto' }}>
-                            {opt.original}
+                            {paymentMode === 'monthly' ? getMonthlyPrice(opt.original) : opt.original}
                           </span>
                         )}
                       </div>
