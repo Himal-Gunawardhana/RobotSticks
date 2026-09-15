@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,13 +44,28 @@ const Navbar = () => {
           {['About STEAM', 'Partnership', 'Packages'].map((item, i) => (
             <motion.a
               key={item}
-              href={`#${item.toLowerCase().replace(' ', '')}`}
+              href={`/#${item.toLowerCase().replace(' ', '')}`}
               whileHover={{ scale: 1.05, color: 'var(--stickem-red)' }}
               style={{ color: 'var(--dark-text)', fontWeight: 600 }}
             >
               {item}
             </motion.a>
           ))}
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              to="/recordings"
+              style={{
+                color: 'var(--dark-text)',
+                fontWeight: 600,
+                fontSize: '1rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+              }}
+            >
+              🎥 Recordings
+            </Link>
+          </motion.div>
           <motion.button
             className="btn-primary"
             onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
@@ -81,9 +97,10 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             style={{ overflow: 'hidden' }}
           >
-            <a href="#about" onClick={closeMenu}>About STEAM</a>
-            <a href="#partnership" onClick={closeMenu}>Partnership</a>
-            <a href="#packages" onClick={closeMenu}>Packages</a>
+            <a href="/#about" onClick={closeMenu}>About STEAM</a>
+            <a href="/#partnership" onClick={closeMenu}>Partnership</a>
+            <a href="/#packages" onClick={closeMenu}>Packages</a>
+            <Link to="/recordings" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>🎥 Recordings</Link>
             <button className="btn-primary" onClick={() => { closeMenu(); window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank'); }}>
               Register Now 🚀
             </button>
