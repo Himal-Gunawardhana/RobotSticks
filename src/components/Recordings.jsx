@@ -228,7 +228,7 @@ const Recordings = () => {
               lineHeight: 1.8,
             }}
           >
-            Watch all your STEAM session recordings — Sinhala and English medium — right here, anytime.
+            Watch all your free STEAM Robotics & AI session recordings - Sinhala and English medium - right here, anytime.
           </motion.p>
         </div>
       </section>
