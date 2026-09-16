@@ -24,8 +24,8 @@ const packages = [
         original: '20,000',
         discounted: '15,000',
         unit: 'LKR',
-        seatsMax: 40,
-        seatsTaken: 15,
+        seatsMax: 60,
+        seatsTaken: 45,
         seatLabel: 'Online Seats'
       },
       {
@@ -34,7 +34,7 @@ const packages = [
         discounted: '25,000',
         unit: 'LKR',
         seatsMax: 40,
-        seatsTaken: 25,
+        seatsTaken: 35,
         seatLabel: 'Physical Seats'
       }
     ],
@@ -62,8 +62,8 @@ const packages = [
         original: '25,000',
         discounted: '20,000',
         unit: 'LKR',
-        seatsMax: 60,
-        seatsTaken: 42,
+        seatsMax: 70,
+        seatsTaken: 55,
         seatLabel: 'Online Seats'
       },
       {
@@ -72,7 +72,7 @@ const packages = [
         discounted: '30,000',
         unit: 'LKR',
         seatsMax: 40,
-        seatsTaken: 18,
+        seatsTaken: 35,
         seatLabel: 'Physical Seats'
       }
     ],
@@ -100,7 +100,7 @@ const packages = [
         discounted: '25,000',
         unit: 'LKR',
         seatsMax: 50,
-        seatsTaken: 25,
+        seatsTaken: 35,
         seatLabel: 'Online Seats'
       },
       {
@@ -109,7 +109,7 @@ const packages = [
         discounted: '35,000',
         unit: 'LKR',
         seatsMax: 40,
-        seatsTaken: 12,
+        seatsTaken: 30,
         seatLabel: 'Physical Seats'
       }
     ],
@@ -136,8 +136,8 @@ const packages = [
         original: '30,000',
         discounted: '25,000',
         unit: 'LKR',
-        seatsMax: 30,
-        seatsTaken: 10,
+        seatsMax: 20,
+        seatsTaken: 12,
         seatLabel: 'Online Seats'
       },
       {
@@ -146,7 +146,7 @@ const packages = [
         discounted: '40,000',
         unit: 'LKR',
         seatsMax: 40,
-        seatsTaken: 15,
+        seatsTaken: 8,
         seatLabel: 'Physical Seats'
       }
     ],
