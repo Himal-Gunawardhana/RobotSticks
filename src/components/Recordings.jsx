@@ -85,6 +85,22 @@ const recordingDays = [
       { id: 'TQMfveRTMKw', title: 'Age 17–19 Advanced', subtitle: 'English Medium · Sep 12 · Session 01' },
     ],
   },
+  {
+    day: 'Day 02',
+    title: 'Session 02 — September 20, 2025',
+    sinhala: [
+      { id: 'eLCc46jRna0', title: 'Age 7–10 Kids STEAM', subtitle: 'Sinhala Medium · Sep 20 · Session 02' },
+      { id: 'GSEx3tdeCHw', title: 'Age 11–13 Junior', subtitle: 'Sinhala Medium · Sep 20 · Session 02' },
+      { id: 'ixINpwvnMKI', title: 'Age 14–16 Senior', subtitle: 'Sinhala Medium · Sep 20 · Session 02' },
+      { id: '_mAvdIWGEpk', title: 'Age 17–19 Advanced', subtitle: 'Sinhala Medium · Sep 20 · Session 02' },
+    ],
+    english: [
+      { id: 'n_rN5aEQ-TE', title: 'Age 7–10 Kids STEAM', subtitle: 'English Medium · Sep 20 · Session 02' },
+      { id: 'Ukmngp8I1G0', title: 'Age 11–13 Junior', subtitle: 'English Medium · Sep 20 · Session 02' },
+      { id: '_eJoWleqt7c', title: 'Age 14–16 Senior', subtitle: 'English Medium · Sep 19 · Session 02' },
+      { id: '_eJoWleqt7c', title: 'Age 17–19 Advanced', subtitle: 'English Medium · Sep 19 · Session 02' },
+    ],
+  },
 ];
 
 // ─── Video Card ───────────────────────────────────────────────────────────────
