@@ -96,8 +96,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '30,000',
-        discounted: '25,000',
+        original: '25,000',
+        discounted: '20,000',
         unit: 'LKR',
         seatsMax: 50,
         seatsTaken: 35,
@@ -105,8 +105,8 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '40,000',
-        discounted: '35,000',
+        original: '35,000',
+        discounted: '30,000',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 30,
@@ -133,8 +133,8 @@ const packages = [
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '30,000',
-        discounted: '25,000',
+        original: '25,000',
+        discounted: '20,000',
         unit: 'LKR',
         seatsMax: 20,
         seatsTaken: 12,
@@ -142,8 +142,8 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '45,000',
-        discounted: '40,000',
+        original: '35,000',
+        discounted: '30,000',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 8,
