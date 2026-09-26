@@ -184,7 +184,7 @@ const KitCheckout = () => {
                       if (p.noSensor) {
                         setSensorOption('none');
                       } else {
-                        setSensorOption('stickem');
+                        setSensorOption('generic');
                       }
                     }}
                     style={{
