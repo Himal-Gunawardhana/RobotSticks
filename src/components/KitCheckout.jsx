@@ -125,6 +125,32 @@ const KitCheckout = () => {
     setPromoStatus(null);
   };
 
+  const handleOrder = () => {
+    const programName = programs.find(p => p.id === selectedProgram)?.label || 'Not enrolled / Standalone purchase';
+    
+    let text = `Hello Robotsticks Team! 👋\nI would like to place a kit order:\n\n`;
+    text += `*Program:* ${programName}\n`;
+    text += `*Robotics Kit:* Stick 'Em Robotics Kit\n`;
+    
+    if (sensorOption === 'stickem') {
+      text += `*Sensor Kit:* Stick 'Em Sensor Expansion Kit\n`;
+    } else if (sensorOption === 'generic') {
+      text += `*Sensor Kit:* Generic Sensor Kit\n`;
+    } else {
+      text += `*Sensor Kit:* None\n`;
+    }
+
+    if (promoApplied) {
+      text += `*Promo Code:* ${PROMO_CODE} (Discount applied)\n`;
+    }
+
+    text += `\n*Total Due:* ${fmt(prices.total, currency, SGD_RATE)}\n\n`;
+    text += `Please let me know how to proceed with the payment!`;
+
+    const encodedText = encodeURIComponent(text);
+    window.open(`https://wa.me/message/4G4ZERPPUXOCH1?text=${encodedText}`, '_blank');
+  };
+
   const programNoSensor = programs.find(p => p.id === selectedProgram)?.noSensor;
 
   return (
@@ -449,7 +475,7 @@ const KitCheckout = () => {
                 <motion.button
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => window.open('https://wa.me/message/4G4ZERPPUXOCH1', '_blank')}
+                  onClick={handleOrder}
                   style={{ width: '100%', padding: '0.9rem', background: 'var(--dark-text)', color: 'white', border: 'none', borderRadius: '0.85rem', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', boxShadow: '0 6px 20px rgba(15,23,42,0.2)' }}
                 >
                   Proceed to Order via WhatsApp
