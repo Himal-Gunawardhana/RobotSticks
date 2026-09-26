@@ -78,6 +78,7 @@ const KitCheckout = () => {
   const [currency, setCurrency] = useState('LKR');
   const [mascotMsg, setMascotMsg] = useState(null);
   const [isMascotVisible, setIsMascotVisible] = useState(false);
+  const [orderStep, setOrderStep] = useState('cart'); // 'cart' | 'receipt'
   const [activeSection, setActiveSection] = useState(null);
 
   const isKidsSteam = selectedProgram === 'kids-steam';
@@ -125,30 +126,41 @@ const KitCheckout = () => {
     setPromoStatus(null);
   };
 
-  const handleOrder = () => {
+  const downloadReceipt = () => {
     const programName = programs.find(p => p.id === selectedProgram)?.label || 'Not enrolled / Standalone purchase';
     
-    let text = `Hello Robotsticks Team! 👋\nI would like to place a kit order:\n\n`;
-    text += `*Program:* ${programName}\n`;
-    text += `*Robotics Kit:* Stick 'Em Robotics Kit\n`;
+    let text = `=======================================\n`;
+    text += `       ROBOTSTICKS ORDER RECEIPT       \n`;
+    text += `=======================================\n\n`;
+    text += `Date: ${new Date().toLocaleDateString()}\n\n`;
+    text += `PROGRAM:\n${programName}\n\n`;
+    text += `ITEMS ORDERED:\n`;
+    text += `- Stick 'Em Robotics Kit\n`;
     
     if (sensorOption === 'stickem') {
-      text += `*Sensor Kit:* Stick 'Em Sensor Expansion Kit\n`;
+      text += `- Stick 'Em Sensor Expansion Kit\n`;
     } else if (sensorOption === 'generic') {
-      text += `*Sensor Kit:* Generic Sensor Kit\n`;
-    } else {
-      text += `*Sensor Kit:* None\n`;
+      text += `- Generic Sensor Kit\n`;
     }
 
     if (promoApplied) {
-      text += `*Promo Code:* ${PROMO_CODE} (Discount applied)\n`;
+      text += `\nPROMO CODE APPLIED:\n${PROMO_CODE} (Discount applied)\n`;
     }
 
-    text += `\n*Total Due:* ${fmt(prices.total, currency, SGD_RATE)}\n\n`;
-    text += `Please let me know how to proceed with the payment!`;
+    text += `\n---------------------------------------\n`;
+    text += `TOTAL DUE: ${fmt(prices.total, currency, SGD_RATE)}\n`;
+    text += `---------------------------------------\n\n`;
+    text += `Please send this receipt to our WhatsApp to proceed with payment!`;
 
-    const encodedText = encodeURIComponent(text);
-    window.open(`https://wa.me/message/4G4ZERPPUXOCH1?text=${encodedText}`, '_blank');
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Robotsticks_Order_Receipt.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   const programNoSensor = programs.find(p => p.id === selectedProgram)?.noSensor;
@@ -471,19 +483,53 @@ const KitCheckout = () => {
               </div>
 
               {/* CTA */}
-              <div style={{ marginTop: '1.75rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <motion.button
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                  onClick={handleOrder}
-                  style={{ width: '100%', padding: '0.9rem', background: 'var(--dark-text)', color: 'white', border: 'none', borderRadius: '0.85rem', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', boxShadow: '0 6px 20px rgba(15,23,42,0.2)' }}
-                >
-                  Proceed to Order via WhatsApp
-                </motion.button>
-                <div style={{ fontSize: '0.78rem', color: 'rgba(15,23,42,0.5)', textAlign: 'center', lineHeight: 1.5 }}>
-                  Kit orders are currently processed via WhatsApp. Online payment coming soon.
+              {orderStep === 'cart' ? (
+                <div style={{ marginTop: '1.75rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setOrderStep('receipt')}
+                    style={{ width: '100%', padding: '0.9rem', background: 'var(--dark-text)', color: 'white', border: 'none', borderRadius: '0.85rem', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', boxShadow: '0 6px 20px rgba(15,23,42,0.2)' }}
+                  >
+                    Generate Order Receipt
+                  </motion.button>
+                  <div style={{ fontSize: '0.78rem', color: 'rgba(15,23,42,0.5)', textAlign: 'center', lineHeight: 1.5 }}>
+                    Kit orders are currently processed via WhatsApp. Online payment coming soon.
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  style={{ marginTop: '1.75rem', padding: '1.5rem', background: 'rgba(37,211,102,0.06)', border: '2px dashed rgba(37,211,102,0.4)', borderRadius: '1rem', textAlign: 'center' }}
+                >
+                  <h4 style={{ color: 'var(--stickem-green)', margin: '0 0 0.5rem 0', fontSize: '1.15rem', fontWeight: 800 }}>Receipt Generated! 🎉</h4>
+                  <p style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.7)', margin: '0 0 1.25rem 0', lineHeight: 1.5 }}>
+                    Please download your receipt below, then send that file to our WhatsApp to complete your order.
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={downloadReceipt}
+                      style={{ padding: '0.85rem', background: 'var(--dark-text)', color: 'white', border: 'none', borderRadius: '0.6rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}
+                    >
+                      1. Download Receipt (.txt)
+                    </motion.button>
+                    <motion.button
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => window.open('https://wa.me/message/4G4ZERPPUXOCH1', '_blank')}
+                      style={{ padding: '0.85rem', background: '#25D366', color: 'white', border: 'none', borderRadius: '0.6rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.5rem' }}
+                    >
+                      2. Open WhatsApp 💬
+                    </motion.button>
+                  </div>
+                  <button onClick={() => setOrderStep('cart')} style={{ background: 'none', border: 'none', color: 'rgba(15,23,42,0.4)', fontSize: '0.8rem', marginTop: '1rem', cursor: 'pointer', textDecoration: 'underline' }}>
+                    ← Edit Cart
+                  </button>
+                </motion.div>
+              )}
 
               {/* Koko Option */}
               <div style={{ marginTop: '1.25rem', padding: '0.85rem 1rem', background: 'rgba(0,0,0,0.03)', borderRadius: '0.75rem', border: '1px dashed rgba(0,0,0,0.1)', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
