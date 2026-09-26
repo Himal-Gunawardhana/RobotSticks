@@ -7,6 +7,7 @@ import bot7 from '../assets/bot7.png';
 import bot8 from '../assets/bot8.png';
 import bot9 from '../assets/bot9.png';
 import bot10 from '../assets/bot10.png';
+import { jsPDF } from "jspdf";
 
 // ─── Source-of-truth pricing ───────────────────────────────────────────────
 const PRICES = {
@@ -129,38 +130,63 @@ const KitCheckout = () => {
   const downloadReceipt = () => {
     const programName = programs.find(p => p.id === selectedProgram)?.label || 'Not enrolled / Standalone purchase';
     
-    let text = `=======================================\n`;
-    text += `       ROBOTSTICKS ORDER RECEIPT       \n`;
-    text += `=======================================\n\n`;
-    text += `Date: ${new Date().toLocaleDateString()}\n\n`;
-    text += `PROGRAM:\n${programName}\n\n`;
-    text += `ITEMS ORDERED:\n`;
-    text += `- Stick 'Em Robotics Kit\n`;
+    const doc = new jsPDF();
     
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(22);
+    doc.text("Robotsticks Order Receipt", 20, 30);
+    
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "normal");
+    doc.text(`Date: ${new Date().toLocaleDateString()}`, 20, 45);
+    
+    doc.setFont("helvetica", "bold");
+    doc.text("PROGRAM:", 20, 60);
+    doc.setFont("helvetica", "normal");
+    doc.text(programName, 20, 68);
+    
+    doc.setFont("helvetica", "bold");
+    doc.text("ITEMS ORDERED:", 20, 85);
+    doc.setFont("helvetica", "normal");
+    doc.text("- Stick 'Em Robotics Kit", 20, 93);
+    
+    let y = 101;
     if (sensorOption === 'stickem') {
-      text += `- Stick 'Em Sensor Expansion Kit\n`;
+      doc.text("- Stick 'Em Sensor Expansion Kit", 20, y);
+      y += 8;
     } else if (sensorOption === 'generic') {
-      text += `- Generic Sensor Kit\n`;
+      doc.text("- Generic Sensor Kit", 20, y);
+      y += 8;
     }
 
     if (promoApplied) {
-      text += `\nPROMO CODE APPLIED:\n${PROMO_CODE} (Discount applied)\n`;
+      y += 5;
+      doc.setFont("helvetica", "bold");
+      doc.text("PROMO CODE APPLIED:", 20, y);
+      doc.setFont("helvetica", "normal");
+      doc.text(`${PROMO_CODE} (Discount applied)`, 20, y + 8);
+      y += 16;
+    } else {
+      y += 10;
     }
 
-    text += `\n---------------------------------------\n`;
-    text += `TOTAL DUE: ${fmt(prices.total, currency, SGD_RATE)}\n`;
-    text += `---------------------------------------\n\n`;
-    text += `Please send this receipt to our WhatsApp to proceed with payment!`;
+    doc.setLineWidth(0.5);
+    doc.line(20, y, 190, y);
+    y += 10;
+    
+    doc.setFontSize(14);
+    doc.setFont("helvetica", "bold");
+    doc.text(`TOTAL DUE: ${fmt(prices.total, currency, SGD_RATE)}`, 20, y);
+    
+    y += 5;
+    doc.line(20, y, 190, y);
+    y += 20;
 
-    const blob = new Blob([text], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Robotsticks_Order_Receipt.txt';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+    doc.setFontSize(11);
+    doc.setFont("helvetica", "italic");
+    doc.text("Please send this receipt to our WhatsApp to proceed with payment!", 20, y);
+
+    doc.save("Robotsticks_Order_Receipt.pdf");
   };
 
   const programNoSensor = programs.find(p => p.id === selectedProgram)?.noSensor;
@@ -514,7 +540,7 @@ const KitCheckout = () => {
                       onClick={downloadReceipt}
                       style={{ padding: '0.85rem', background: 'var(--dark-text)', color: 'white', border: 'none', borderRadius: '0.6rem', fontWeight: 700, cursor: 'pointer', fontSize: '0.95rem' }}
                     >
-                      1. Download Receipt (.txt)
+                      1. Download Receipt (.pdf)
                     </motion.button>
                     <motion.button
                       whileHover={{ scale: 1.02 }}
