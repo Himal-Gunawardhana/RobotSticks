@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import bot16 from '../assets/bot16.png';
 
 // Floating colourful bubble
 const Bubble = ({ size, color, top, left, delay, duration }) => (
@@ -64,7 +65,13 @@ const Hero = () => {
               fontWeight: 600, fontSize: '0.9rem', color: 'var(--stickem-blue)'
             }}
           >
-            <motion.span animate={{ rotate: [0, 20, -10, 0] }} transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}>🤖</motion.span>
+            <motion.img 
+              src={bot16}
+              alt="Bot"
+              animate={{ rotate: [0, 20, -10, 0] }} 
+              transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
+              style={{ width: '24px', height: 'auto', display: 'inline-block' }}
+            />
             STEAM Education for Sri Lanka
           </motion.div>
 

@@ -8,16 +8,25 @@ import Partnership from './components/Partnership';
 import Packages from './components/Packages';
 import WhatsAppButton from './components/WhatsAppButton';
 import Recordings from './components/Recordings';
+import ProgramsOverview from './components/Programs';
+import ProgramDetail from './components/ProgramDetail';
+import KitCheckout from './components/KitCheckout';
 import './App.css';
+
+import bot11 from './assets/bot11.png';
+import bot12 from './assets/bot12.png';
+import bot13 from './assets/bot13.png';
+import bot14 from './assets/bot14.png';
+import bot6 from './assets/bot6.png';
 
 // Animated STEAM icon row
 const SteamIcons = () => {
   const icons = [
-    { emoji: '🔬', label: 'Science' },
-    { emoji: '💻', label: 'Technology' },
-    { emoji: '⚙️', label: 'Engineering' },
-    { emoji: '🎨', label: 'Arts' },
-    { emoji: '📐', label: 'Mathematics' },
+    { emoji: <img src={bot11} alt="Science" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />, label: 'Science' },
+    { emoji: <img src={bot12} alt="Technology" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />, label: 'Technology' },
+    { emoji: <img src={bot13} alt="Engineering" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />, label: 'Engineering' },
+    { emoji: <img src={bot14} alt="Arts" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />, label: 'Arts' },
+    { emoji: <img src={bot6} alt="Mathematics" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />, label: 'Mathematics' },
   ];
   return (
     <div style={{ display: 'flex', justifyContent: 'center', gap: 'clamp(1rem, 4vw, 3rem)', flexWrap: 'wrap', padding: '2.5rem 1rem 0' }}>
@@ -29,10 +38,10 @@ const SteamIcons = () => {
           viewport={{ once: true }}
           transition={{ delay: i * 0.12, duration: 0.4 }}
           whileHover={{ y: -6, scale: 1.1 }}
-          style={{ textAlign: 'center', cursor: 'default' }}
+          style={{ textAlign: 'center', cursor: 'default', display: 'flex', flexDirection: 'column', alignItems: 'center' }}
         >
           <motion.div
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '0.3rem' }}
+            style={{ marginBottom: '0.5rem', height: '48px', display: 'flex', alignItems: 'flex-end', justifyContent: 'center' }}
             animate={{ y: [0, -6, 0] }}
             transition={{ duration: 2.5, delay: i * 0.4, repeat: Infinity, ease: 'easeInOut' }}
           >
@@ -49,12 +58,16 @@ const SteamIcons = () => {
 
 function App() {
   return (
-    <Routes>
-      <Route path="/recordings" element={<Recordings />} />
-      <Route path="/" element={
-        <div className="App">
-          <Navbar />
-          <Hero />
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/recordings" element={<Recordings />} />
+        <Route path="/programs" element={<ProgramsOverview />} />
+        <Route path="/programs/:programId" element={<ProgramDetail />} />
+        <Route path="/kit" element={<KitCheckout />} />
+        <Route path="/" element={
+          <>
+            <Hero />
 
           {/* STEAM Icons strip */}
           <section style={{ padding: '2rem 0 3rem', background: 'var(--lighter-bg)', borderTop: '2px solid var(--glass-border)' }}>
@@ -178,9 +191,10 @@ function App() {
           </footer>
 
           <WhatsAppButton />
-        </div>
+        </>
       } />
-    </Routes>
+      </Routes>
+    </div>
   );
 }
 

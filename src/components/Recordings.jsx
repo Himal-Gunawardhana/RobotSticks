@@ -12,7 +12,7 @@ const socialLinks = [
     url: 'https://www.facebook.com/share/1K4dvYTN9M/',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
-        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.024 4.388 11.018 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796v8.437C19.612 23.091 24 18.097 24 12.073z"/>
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.024 4.388 11.018 10.125 11.927v-8.437H7.078v-3.49h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796v8.437C19.612 23.091 24 18.097 24 12.073z" />
       </svg>
     ),
     color: '#1877F2',
@@ -27,7 +27,7 @@ const socialLinks = [
     url: 'https://www.instagram.com/robotsticks?stkn=eGU5djZucjJmcTN2',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
       </svg>
     ),
     color: '#E1306C',
@@ -42,7 +42,7 @@ const socialLinks = [
     url: 'https://www.tiktok.com/@robot.sticks?_r=1&_t=ZS-99lArrvcTdX',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
-        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.25 8.25 0 004.84 1.56V6.84a4.85 4.85 0 01-1.07-.15z"/>
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.25 8.25 0 004.84 1.56V6.84a4.85 4.85 0 01-1.07-.15z" />
       </svg>
     ),
     color: '#010101',
@@ -57,7 +57,7 @@ const socialLinks = [
     url: 'https://youtube.com/@robotsticks?si=Vay5KMKL_5_nEE23',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="36" height="36">
-        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
       </svg>
     ),
     color: '#FF0000',
@@ -71,7 +71,7 @@ const socialLinks = [
 const recordingDays = [
   {
     day: 'Day 01',
-    title: 'Session 01 — September 13, 2025',
+    title: 'Session 01 - September 13, 2025',
     sinhala: [
       { id: 'EN8o8Ff6sew', title: 'Age 7–10 Kids STEAM', subtitle: 'Sinhala Medium · Sep 13 · Session 01' },
       { id: 'R_ID0FWTNAA', title: 'Age 11–13 Junior', subtitle: 'Sinhala Medium · Sep 13 · Session 01' },
@@ -87,7 +87,7 @@ const recordingDays = [
   },
   {
     day: 'Day 02',
-    title: 'Session 02 — September 20, 2025',
+    title: 'Session 02 - September 20, 2025',
     sinhala: [
       { id: 'eLCc46jRna0', title: 'Age 7–10 Kids STEAM', subtitle: 'Sinhala Medium · Sep 20 · Session 02' },
       { id: 'GSEx3tdeCHw', title: 'Age 11–13 Junior', subtitle: 'Sinhala Medium · Sep 20 · Session 02' },
@@ -160,12 +160,34 @@ const VideoCard = ({ video, index, accentColor }) => {
 };
 
 // ─── Main Recordings Page ─────────────────────────────────────────────────────
-const Recordings = () => {
+const Recordings = ({ programId, hideHeader }) => {
+  const getSearchTerm = (pid) => {
+    switch (pid) {
+      case 'kids-steam': return 'Kids STEAM';
+      case 'junior-robotics': return 'Junior';
+      case 'senior-robotics': return 'Senior';
+      case 'advanced-robotics': return 'Advanced';
+      default: return '';
+    }
+  };
+
+  const searchTerm = programId ? getSearchTerm(programId) : '';
+
+  const filteredRecordingDays = recordingDays.map(day => {
+    if (!searchTerm) return day;
+    return {
+      ...day,
+      sinhala: day.sinhala.filter(v => v.title.includes(searchTerm)),
+      english: day.english.filter(v => v.title.includes(searchTerm)),
+    };
+  }).filter(day => day.sinhala.length > 0 || day.english.length > 0);
+
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--light-bg)' }}>
-      <Navbar />
+    <div style={{ minHeight: hideHeader ? 'auto' : '100vh', background: 'var(--light-bg)' }}>
+      {!hideHeader && <Navbar />}
 
       {/* Hero Banner */}
+      {!hideHeader && (
       <section style={{
         paddingTop: '140px',
         paddingBottom: '5rem',
@@ -248,8 +270,10 @@ const Recordings = () => {
           </motion.p>
         </div>
       </section>
+      )}
 
       {/* Social Media Section */}
+      {!hideHeader && (
       <section style={{
         padding: '5rem 0',
         background: 'var(--lighter-bg)',
@@ -369,9 +393,10 @@ const Recordings = () => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Recordings Section */}
-      <section style={{ padding: '5rem 0', background: 'var(--light-bg)' }}>
+      <section style={{ padding: hideHeader ? '2rem 0 0' : '5rem 0', background: 'var(--light-bg)' }}>
         <div className="container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -399,56 +424,30 @@ const Recordings = () => {
               color: 'var(--dark-text)',
               marginBottom: '0.75rem',
             }}>
-              Class <span style={{ color: 'var(--stickem-red)' }}>Recordings</span>
+              Free Month 1 <span style={{ color: 'var(--stickem-red)' }}>Recordings</span>
             </h2>
             <p style={{ color: 'rgba(15,23,42,0.65)', fontSize: '1.05rem', maxWidth: 520, margin: '0 auto' }}>
-              Missed a session? No worries — watch all recordings below, organized by day and medium.
+              Missed a session? No worries - watch all your free Month 1 recordings below, organized by day and medium.
             </p>
           </motion.div>
 
-          {recordingDays.map((dayData, di) => (
-            <motion.div
-              key={di}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              style={{ marginBottom: '5rem' }}
-            >
-              {/* Day header */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '3rem' }}>
-                <div style={{
-                  background: 'linear-gradient(135deg, var(--stickem-blue) 0%, var(--stickem-purple) 100%)',
-                  color: 'white',
-                  borderRadius: '0.75rem',
-                  padding: '0.5rem 1.25rem',
-                  fontFamily: 'Outfit, sans-serif',
-                  fontWeight: 800,
-                  fontSize: '1rem',
-                  border: '2px solid rgba(0,0,0,0.15)',
-                  boxShadow: '4px 4px 0 rgba(0,0,0,0.15)',
-                  flexShrink: 0,
-                }}>
-                  📅 {dayData.day}
-                </div>
-                <div>
-                  <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1.25rem', color: 'var(--dark-text)' }}>
-                    Recordings — {dayData.day}
-                  </div>
-                  <div style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.55)' }}>{dayData.title}</div>
-                </div>
-              </div>
-
-              {/* Sinhala Medium */}
-              <div style={{ marginBottom: '3.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+          >
+            {/* Sinhala Medium Section */}
+            {filteredRecordingDays.some(day => day.sinhala.length > 0) && (
+              <div style={{ marginBottom: '4rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
                   <div style={{ width: 6, height: 32, borderRadius: 3, background: 'var(--stickem-green)', flexShrink: 0 }} />
                   <div>
-                    <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.4rem', color: 'var(--dark-text)', lineHeight: 1.2 }}>
+                    <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.5rem', color: 'var(--dark-text)', lineHeight: 1.2 }}>
                       🇱🇰 Sinhala Medium
                     </h3>
-                    <p style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.5)', marginTop: '0.1rem' }}>
-                      සිංහල මාධ්‍ය — {dayData.day} Sessions
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.5)', marginTop: '0.1rem' }}>
+                      සිංහල මාධ්‍ය Recordings
                     </p>
                   </div>
                 </div>
@@ -457,22 +456,26 @@ const Recordings = () => {
                   gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
                   gap: '1.5rem',
                 }}>
-                  {dayData.sinhala.map((video, vi) => (
-                    <VideoCard key={`sinhala-${di}-${vi}`} video={video} index={vi} accentColor="var(--stickem-green)" />
-                  ))}
+                  {filteredRecordingDays.flatMap(day => 
+                    day.sinhala.map((video, vi) => (
+                      <VideoCard key={`sinhala-${day.day}-${vi}`} video={video} index={vi} accentColor="var(--stickem-green)" />
+                    ))
+                  )}
                 </div>
               </div>
+            )}
 
-              {/* English Medium */}
+            {/* English Medium Section */}
+            {filteredRecordingDays.some(day => day.english.length > 0) && (
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.75rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
                   <div style={{ width: 6, height: 32, borderRadius: 3, background: 'var(--stickem-blue)', flexShrink: 0 }} />
                   <div>
-                    <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.4rem', color: 'var(--dark-text)', lineHeight: 1.2 }}>
+                    <h3 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.5rem', color: 'var(--dark-text)', lineHeight: 1.2 }}>
                       🇬🇧 English Medium
                     </h3>
-                    <p style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.5)', marginTop: '0.1rem' }}>
-                      English Medium — {dayData.day} Sessions
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.5)', marginTop: '0.1rem' }}>
+                      English Medium Recordings
                     </p>
                   </div>
                 </div>
@@ -481,17 +484,20 @@ const Recordings = () => {
                   gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
                   gap: '1.5rem',
                 }}>
-                  {dayData.english.map((video, vi) => (
-                    <VideoCard key={`english-${di}-${vi}`} video={video} index={vi} accentColor="var(--stickem-blue)" />
-                  ))}
+                  {filteredRecordingDays.flatMap(day => 
+                    day.english.map((video, vi) => (
+                      <VideoCard key={`english-${day.day}-${vi}`} video={video} index={vi} accentColor="var(--stickem-blue)" />
+                    ))
+                  )}
                 </div>
               </div>
-            </motion.div>
-          ))}
+            )}
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
+      {!hideHeader && (
       <footer className="footer">
         <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
           <motion.img
@@ -512,8 +518,9 @@ const Recordings = () => {
           </p>
         </div>
       </footer>
+      )}
 
-      <WhatsAppButton />
+      {!hideHeader && <WhatsAppButton />}
     </div>
   );
 };

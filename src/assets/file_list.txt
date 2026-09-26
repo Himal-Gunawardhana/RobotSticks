@@ -1,0 +1,20 @@
+file_list.txt
+ref 01 - BODY upside-down V (90), socket-fed legs.png
+ref 02 - BODY 3-socket T (120T), DRAWN legs, mitt hands.png
+ref 03 - BODY STAR (Cross), every limb socket-fed.png
+ref 04 - BODY single upright tube (Axle), side port.png
+ref 05 - BODY flat triangle T (180T), spectacles.png
+ref 06 - BODY A-frame, socket-fed arms, tube limbs.png
+ref 07 - BODY 3-socket Y, tumbling, drawn limbs.png
+ref 08 - BODY tall tube, side ports, stub legs.png
+ref 09 - BODY horizontal, ANIMAL cat, 4 stub legs.png
+ref 10 - BODY A-frame, ANIMAL crab, 6 thin legs.png
+ref 11 - ANIMAL squid, the BORE IS THE EYE.png
+ref 12 - face and eyebrow vocabulary.png
+ref 13 - COSTUME overlay, connector stays visible.png
+ref 14 - PROPS held at bare arm ends.png
+ref 15 - four different bodies at small scale.png
+ref 16 - KNOWN GOOD costume plus prop.png
+ref 17 - KNOWN GOOD animal, connector undeformed.png
+ref 18 - KNOWN GOOD two characters, age cues.png
+ref 19 - LEG RULE socket-fed (do not copy this grid layout).png

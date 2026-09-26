@@ -41,7 +41,7 @@ const Navbar = () => {
 
         {/* Desktop links */}
         <div className="nav-links">
-          {['About STEAM', 'Partnership', 'Packages'].map((item, i) => (
+          {['About STEAM', 'Partnership'].map((item, i) => (
             <motion.a
               key={item}
               href={`/#${item.toLowerCase().replace(' ', '')}`}
@@ -51,6 +51,11 @@ const Navbar = () => {
               {item}
             </motion.a>
           ))}
+          <motion.div whileHover={{ scale: 1.05, color: 'var(--stickem-red)' }}>
+            <Link to="/programs" style={{ color: 'var(--dark-text)', fontWeight: 600 }}>
+              Programs
+            </Link>
+          </motion.div>
           <motion.div whileHover={{ scale: 1.05 }}>
             <Link
               to="/recordings"
@@ -64,6 +69,21 @@ const Navbar = () => {
               }}
             >
               🎥 Recordings
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link
+              to="/kit"
+              style={{
+                color: 'var(--dark-text)',
+                fontWeight: 600,
+                fontSize: '1rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.3rem',
+              }}
+            >
+              🛒 Kit Store
             </Link>
           </motion.div>
           <motion.button
@@ -99,8 +119,9 @@ const Navbar = () => {
           >
             <a href="/#about" onClick={closeMenu}>About STEAM</a>
             <a href="/#partnership" onClick={closeMenu}>Partnership</a>
-            <a href="/#packages" onClick={closeMenu}>Packages</a>
+            <Link to="/programs" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>Programs</Link>
             <Link to="/recordings" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>🎥 Recordings</Link>
+            <Link to="/kit" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>🛒 Kit Store</Link>
             <button className="btn-primary" onClick={() => { closeMenu(); window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank'); }}>
               Register Now 🚀
             </button>

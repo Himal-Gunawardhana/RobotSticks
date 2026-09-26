@@ -1,1 +1,12 @@
 /* App specific overrides if any, otherwise leave empty as index.css handles it */
+.programs-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .programs-grid-layout {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -8,7 +8,7 @@ const Stats = () => {
   const whatsappMembers = 1000;
   const waitlist = Math.floor(whatsappMembers / 2);
   const maxStudents = 360;
-  const registeredStudents = 255; // Current registered students
+  const registeredStudents = 319; // Current registered students
 
   const statsData = [
     { label: 'Facebook Followers', value: 6500, prefix: '', suffix: '+', emoji: '👍', color: 'var(--stickem-blue)' },

@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 
+import bot16 from '../assets/bot16.png';
+import bot17 from '../assets/bot17.png';
+import bot18 from '../assets/bot18.png';
+import bot19 from '../assets/bot19.png';
+
 const getMonthlyPrice = (priceStr) => {
   if (!priceStr) return null;
   const num = parseInt(priceStr.replace(/,/g, ''), 10);
@@ -16,7 +21,7 @@ const packages = [
     grade: 'Age 7-10',
     location: 'Online / Physical (WP & SP)',
     color: '#8b5cf6',
-    emoji: '🧸',
+    emoji: <img src={bot16} alt="bot" style={{ width: '48px', height: 'auto' }} />,
     badge: '🚀 NEW ENTRY',
     pricingOptions: [
       {
@@ -54,7 +59,7 @@ const packages = [
     grade: 'Age 11-13',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-green)',
-    emoji: '🌱',
+    emoji: <img src={bot17} alt="bot" style={{ width: '48px', height: 'auto' }} />,
     popular: true,
     pricingOptions: [
       {
@@ -92,7 +97,7 @@ const packages = [
     grade: 'Age 14-16',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-blue)',
-    emoji: '⚙️',
+    emoji: <img src={bot18} alt="bot" style={{ width: '48px', height: 'auto' }} />,
     pricingOptions: [
       {
         type: 'Online Plan',
@@ -129,12 +134,12 @@ const packages = [
     grade: 'Age 17-19',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-red)',
-    emoji: '🚀',
+    emoji: <img src={bot19} alt="bot" style={{ width: '48px', height: 'auto' }} />,
     pricingOptions: [
       {
         type: 'Online Plan',
-        original: '25,000',
-        discounted: '20,000',
+        original: '27,500',
+        discounted: '22,500',
         unit: 'LKR',
         seatsMax: 20,
         seatsTaken: 12,
@@ -142,8 +147,8 @@ const packages = [
       },
       {
         type: 'Physical Plan',
-        original: '35,000',
-        discounted: '30,000',
+        original: '37,500',
+        discounted: '32,500',
         unit: 'LKR',
         seatsMax: 40,
         seatsTaken: 8,
@@ -209,6 +214,8 @@ const Packages = () => {
           </h2>
           <p style={{ color: 'rgba(15,23,42,0.7)', fontSize: '1.05rem', maxWidth: '550px', margin: '0 auto', marginBottom: '2rem' }}>
             Expertly crafted programs based on world-class Stick'Em curriculum.
+            <br />
+            <span style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--stickem-red)' }}>* A one-time registration fee of 1,500 LKR applies for new enrollments.</span>
           </p>
 
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3rem', alignItems: 'center', gap: '1rem' }}>
@@ -340,20 +347,36 @@ const Packages = () => {
                   </div>
                 ))}
                 
-                <motion.button
-                  whileHover={{ scale: 1.04, rotate: -1 }}
-                  whileTap={{ scale: 0.96 }}
-                  onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
-                  style={{
-                    width: '100%', padding: '1rem',
-                    background: pkg.color, color: 'white',
-                    border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
-                    fontFamily: 'Outfit', fontWeight: 700, fontSize: '1.1rem', cursor: 'pointer',
-                    boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
-                  }}
-                >
-                  Enroll Online Now 🎓
-                </motion.button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                  <motion.button
+                    whileHover={{ scale: 1.04, rotate: -1 }}
+                    whileTap={{ scale: 0.96 }}
+                    onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                    style={{
+                      width: '100%', padding: '1rem',
+                      background: pkg.color, color: 'white',
+                      border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
+                      fontFamily: 'Outfit', fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
+                      boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
+                    }}
+                  >
+                    Enroll for Free Month 1 🎓
+                  </motion.button>
+                  <motion.button
+                    whileHover={{ scale: 1.04, rotate: -1 }}
+                    whileTap={{ scale: 0.96 }}
+                    onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')}
+                    style={{
+                      width: '100%', padding: '0.9rem',
+                      background: 'white', color: pkg.color,
+                      border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
+                      fontFamily: 'Outfit', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer',
+                      boxShadow: `3px 3px 0px rgba(0,0,0,0.1)`, transition: 'all 0.2s'
+                    }}
+                  >
+                    Register for 6-Month Full Course 🚀
+                  </motion.button>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -463,21 +486,36 @@ const Packages = () => {
               </ul>
 
               {/* CTA */}
-              <motion.button
-                whileHover={{ scale: 1.04, rotate: -1 }}
-                whileTap={{ scale: 0.96 }}
-                onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
-                style={{
-                  width: '100%', padding: '0.7rem',
-                  background: pkg.color, color: pkg.id === 3 ? 'var(--dark-text)' : 'white',
-                  border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
-                  fontFamily: 'Outfit', fontWeight: 700, fontSize: '1rem', cursor: 'pointer',
-                  boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s',
-                  marginTop: 'auto'
-                }}
-              >
-                Enroll Now 🎓
-              </motion.button>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', marginTop: 'auto' }}>
+                <motion.button
+                  whileHover={{ scale: 1.04, rotate: -1 }}
+                  whileTap={{ scale: 0.96 }}
+                  onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                  style={{
+                    width: '100%', padding: '0.7rem',
+                    background: pkg.color, color: pkg.id === 3 ? 'var(--dark-text)' : 'white',
+                    border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
+                    fontFamily: 'Outfit', fontWeight: 700, fontSize: '0.95rem', cursor: 'pointer',
+                    boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
+                  }}
+                >
+                  Enroll for Free Month 1 🎓
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.04, rotate: -1 }}
+                  whileTap={{ scale: 0.96 }}
+                  onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')}
+                  style={{
+                    width: '100%', padding: '0.65rem',
+                    background: 'white', color: pkg.color,
+                    border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
+                    fontFamily: 'Outfit', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer',
+                    boxShadow: `3px 3px 0px rgba(0,0,0,0.1)`, transition: 'all 0.2s'
+                  }}
+                >
+                  Register for 6-Month Full Course 🚀
+                </motion.button>
+              </div>
             </motion.div>
           ))}
         </div>
