@@ -7,6 +7,8 @@ import bot7 from '../assets/bot7.png';
 import bot8 from '../assets/bot8.png';
 import bot9 from '../assets/bot9.png';
 import bot10 from '../assets/bot10.png';
+import kitImg from '../assets/stick-em-1.png';
+import sensorImg from '../assets/stick-em-2.png';
 import { jsPDF } from "jspdf";
 
 // ─── Source-of-truth pricing ───────────────────────────────────────────────
@@ -326,9 +328,10 @@ const KitCheckout = () => {
                 </div>
                 <div style={{ fontSize: '2.5rem' }}>🤖</div>
               </div>
-              <p style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.7)', lineHeight: 1.6, margin: 0 }}>
+              <p style={{ fontSize: '0.9rem', color: 'rgba(15,23,42,0.7)', lineHeight: 1.6, margin: '0 0 1.25rem 0' }}>
                 Empower your child to become a young innovator with Stick 'Em, the ultimate robotics and STEAM learning kit. Design and build robots, gadgets, and interactive creations - perfect for creative play, home-based learning, and future-ready skill development.
               </p>
+              <img src={kitImg} alt="Stick 'Em Robotics Kit" style={{ width: '100%', borderRadius: '1rem', border: '1px solid rgba(0,0,0,0.05)', display: 'block' }} />
             </motion.div>
 
             {/* Sensor Options */}
@@ -368,6 +371,7 @@ const KitCheckout = () => {
                     title="Stick 'Em Sensor Expansion Kit"
                     priceFmt={fmt(PRICES.sensorExpansion, currency, SGD_RATE)}
                     description="Upgrade your Stick 'Em Robotics Kit with our powerful Sensor Expansion Kit. Easily integrate sensors like ultrasonic distance detectors, light sensors, touch inputs, and motion-tracking gyroscopes into your creations. Turn simple robots into smart, interactive inventions."
+                    imgSrc={sensorImg}
                   />
 
                   {/* Generic Sensor */}
@@ -650,7 +654,7 @@ const KitCheckout = () => {
 };
 
 // ─── Sensor Card Sub-component ─────────────────────────────────────────────
-const SensorCard = ({ selected, onClick, badge, badgeColor, icon, title, priceFmt, description, disclaimer }) => (
+const SensorCard = ({ selected, onClick, badge, badgeColor, icon, title, priceFmt, description, disclaimer, imgSrc }) => (
   <motion.div
     whileHover={{ scale: 1.01 }}
     onClick={onClick}
@@ -677,6 +681,11 @@ const SensorCard = ({ selected, onClick, badge, badgeColor, icon, title, priceFm
     </div>
     <p style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.65)', lineHeight: 1.5, margin: 0, paddingLeft: '1.75rem' }}>{description}</p>
     {disclaimer && <p style={{ fontSize: '0.75rem', color: 'rgba(15,23,42,0.4)', fontStyle: 'italic', margin: 0, paddingLeft: '1.75rem' }}>⚠️ {disclaimer}</p>}
+    {imgSrc && (
+      <div style={{ paddingLeft: '1.75rem', marginTop: '0.5rem' }}>
+        <img src={imgSrc} alt={title} style={{ width: '100%', maxWidth: '300px', borderRadius: '0.75rem', border: '1px solid rgba(0,0,0,0.05)', display: 'block' }} />
+      </div>
+    )}
   </motion.div>
 );
 
