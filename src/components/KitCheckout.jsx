@@ -11,12 +11,11 @@ import kitImg from '../assets/stick-em-1.png';
 import sensorImg from '../assets/stick-em-2.png';
 import { jsPDF } from "jspdf";
 
-// ─── Source-of-truth pricing ───────────────────────────────────────────────
 const PRICES = {
-  roboticsKit: 26881.24,
-  sensorExpansion: 9408.43,
-  genericSensor: 3000.00,
-  shipping: 10752.49,
+  roboticsKit: 26900,
+  sensorExpansion: 9400,
+  genericSensor: 3000,
+  shipping: 10800,
 };
 
 // Discount rules: (sensor_selection) × (valid code) → discount amount
@@ -27,8 +26,6 @@ const DISCOUNT_RULES = {
 
 const PROMO_CODE = 'ROBOTSTICKS25'; // placeholder, team to confirm
 
-const SGD_RATE = 268.8124; // LKR per 1 SGD - team to confirm source
-
 const programs = [
   { id: 'kids-steam', label: 'Kids STEAM (Ages 7–10)', noSensor: true },
   { id: 'junior-robotics', label: 'Junior Robotics & AI (Ages 11–13)', noSensor: false },
@@ -36,16 +33,13 @@ const programs = [
   { id: 'advanced-robotics', label: 'Advanced Robotics & AI (Ages 17–19)', noSensor: false },
 ];
 
-const fmt = (amount, currency, rate) => {
-  if (currency === 'SGD') {
-    return `SGD ${(amount / rate).toLocaleString('en-SG', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-  }
+const fmt = (amount) => {
   return `LKR ${amount.toLocaleString('en-LK', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 };
 
 // ─── Sub-components ────────────────────────────────────────────────────────
 
-const LineItem = ({ label, amount, currency, rate, isMuted, isDiscount, isTotal }) => (
+const LineItem = ({ label, amount, isMuted, isDiscount, isTotal }) => (
   <div style={{
     display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start',
     padding: isTotal ? '1rem 0 0' : '0.6rem 0',
@@ -63,7 +57,7 @@ const LineItem = ({ label, amount, currency, rate, isMuted, isDiscount, isTotal 
       color: isTotal ? 'var(--stickem-green)' : isDiscount ? 'var(--stickem-green)' : 'var(--dark-text)',
       whiteSpace: 'nowrap',
       marginLeft: '1rem',
-    }}>{isDiscount ? '– ' : ''}{fmt(Math.abs(amount), currency, rate)}</span>
+    }}>{isDiscount ? '– ' : ''}{fmt(Math.abs(amount))}</span>
   </div>
 );
 
@@ -78,7 +72,6 @@ const KitCheckout = () => {
   const [promoInput, setPromoInput] = useState('');
   const [promoStatus, setPromoStatus] = useState(null); // null | 'valid' | 'invalid' | 'not_active'
   const [promoApplied, setPromoApplied] = useState(false);
-  const [currency, setCurrency] = useState('LKR');
   const [mascotMsg, setMascotMsg] = useState(null);
   const [isMascotVisible, setIsMascotVisible] = useState(false);
   const [orderStep, setOrderStep] = useState('cart'); // 'cart' | 'receipt'
@@ -178,7 +171,7 @@ const KitCheckout = () => {
     
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
-    doc.text(`TOTAL DUE: ${fmt(prices.total, currency, SGD_RATE)}`, 20, y);
+    doc.text(`TOTAL DUE: ${fmt(prices.total)}`, 20, y);
     
     y += 5;
     doc.line(20, y, 190, y);
@@ -323,7 +316,7 @@ const KitCheckout = () => {
                   </div>
                   <h3 style={{ fontSize: '1.25rem', color: 'var(--dark-text)', marginBottom: '0.25rem' }}>Stick 'Em Robotics Kit</h3>
                   <div style={{ fontSize: '1.4rem', fontWeight: 800, color: '#8b5cf6' }}>
-                    {fmt(PRICES.roboticsKit, currency, SGD_RATE)}
+                    {fmt(PRICES.roboticsKit)}
                   </div>
                 </div>
                 <div style={{ fontSize: '2.5rem' }}>🤖</div>
@@ -369,7 +362,7 @@ const KitCheckout = () => {
                     badgeColor="var(--stickem-green)"
                     icon="🧩"
                     title="Stick 'Em Sensor Expansion Kit"
-                    priceFmt={fmt(PRICES.sensorExpansion, currency, SGD_RATE)}
+                    priceFmt={fmt(PRICES.sensorExpansion)}
                     description="Upgrade your Stick 'Em Robotics Kit with our powerful Sensor Expansion Kit. Easily integrate sensors like ultrasonic distance detectors, light sensors, touch inputs, and motion-tracking gyroscopes into your creations. Turn simple robots into smart, interactive inventions."
                     imgSrc={sensorImg}
                   />
@@ -382,7 +375,7 @@ const KitCheckout = () => {
                     badgeColor="var(--stickem-blue)"
                     icon="📡"
                     title="Generic Sensor Kit"
-                    priceFmt={fmt(PRICES.genericSensor, currency, SGD_RATE)}
+                    priceFmt={fmt(PRICES.genericSensor)}
                     description="A functional sensor kit covering the essentials needed for Robotsticks practical sessions - distance, light, and touch sensing. Not the Stick 'Em branded version, but built to work seamlessly with your Robotics Kit for class activities."
                     disclaimer="Spec/contents to be confirmed before launch."
                   />
@@ -405,55 +398,28 @@ const KitCheckout = () => {
                 🧾 Price Breakdown
               </h3>
 
-              {/* Currency Toggle */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', padding: '0.6rem 0.75rem', background: 'rgba(0,0,0,0.03)', borderRadius: '0.75rem' }}>
-                <span style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.6)', fontWeight: 600 }}>Currency:</span>
-                <div style={{ display: 'flex', gap: '0.4rem' }}>
-                  {['LKR', 'SGD'].map(c => (
-                    <button
-                      key={c}
-                      onClick={() => setCurrency(c)}
-                      style={{
-                        padding: '0.3rem 0.75rem', borderRadius: '0.5rem', border: 'none', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer', transition: 'all 0.2s',
-                        background: currency === c ? '#8b5cf6' : 'white', color: currency === c ? 'white' : 'rgba(15,23,42,0.6)', boxShadow: currency === c ? '0 2px 8px rgba(139,92,246,0.3)' : 'none'
-                      }}
-                    >{c}</button>
-                  ))}
-                </div>
-                {currency === 'SGD' && (
-                  <span style={{ fontSize: '0.72rem', color: 'rgba(15,23,42,0.45)', marginLeft: 'auto' }}>1 SGD = {SGD_RATE.toFixed(4)} LKR*</span>
-                )}
-              </div>
-              {currency === 'SGD' && (
-                <div style={{ fontSize: '0.72rem', color: 'rgba(15,23,42,0.45)', marginBottom: '1rem', textAlign: 'right', fontStyle: 'italic' }}>
-                  * Exchange rate to be confirmed by team
-                </div>
-              )}
-
               {/* Line Items */}
               <div>
-                <LineItem label="Stick 'Em Robotics Kit" amount={prices.kitPrice} currency={currency} rate={SGD_RATE} />
+                <LineItem label="Stick 'Em Robotics Kit" amount={prices.kitPrice} />
                 {sensorOption === 'stickem' && (
-                  <LineItem label="Stick 'Em Sensor Expansion Kit" amount={prices.sensorPrice} currency={currency} rate={SGD_RATE} />
+                  <LineItem label="Stick 'Em Sensor Expansion Kit" amount={prices.sensorPrice} />
                 )}
                 {sensorOption === 'generic' && (
-                  <LineItem label="Generic Sensor Kit" amount={prices.sensorPrice} currency={currency} rate={SGD_RATE} />
+                  <LineItem label="Generic Sensor Kit" amount={prices.sensorPrice} />
                 )}
-                <LineItem label="Shipping + VAT" amount={prices.shipping} currency={currency} rate={SGD_RATE} isMuted />
+                <LineItem label="Shipping + VAT" amount={prices.shipping} isMuted />
                 <Divider />
-                <LineItem label="Subtotal" amount={prices.subtotal} currency={currency} rate={SGD_RATE} />
+                <LineItem label="Subtotal" amount={prices.subtotal} />
                 {promoApplied && (
                   <motion.div initial={{ opacity: 0, y: -4 }} animate={{ opacity: 1, y: 0 }}>
                     <LineItem
                       label={`Promo code (${PROMO_CODE}): Enrolled Student`}
                       amount={prices.discount}
-                      currency={currency}
-                      rate={SGD_RATE}
                       isDiscount
                     />
                   </motion.div>
                 )}
-                <LineItem label="Total due" amount={prices.total} currency={currency} rate={SGD_RATE} isTotal />
+                <LineItem label="Total due" amount={prices.total} isTotal />
               </div>
 
               {/* Promo Code Field */}
@@ -621,7 +587,7 @@ const KitCheckout = () => {
                     <td style={{ padding: '0.85rem 1rem', color: 'rgba(15,23,42,0.8)' }}>{row.cart}</td>
                     <td style={{ padding: '0.85rem 1rem', color: row.color || 'rgba(15,23,42,0.6)', fontWeight: row.color ? 700 : 500 }}>{row.code}</td>
                     <td style={{ padding: '0.85rem 1rem', fontWeight: 800, fontSize: '1rem', color: row.color || 'var(--dark-text)', whiteSpace: 'nowrap' }}>
-                      {fmt(row.total, currency, SGD_RATE)}
+                      {fmt(row.total)}
                     </td>
                   </tr>
                 ))}
