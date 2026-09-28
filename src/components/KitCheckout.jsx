@@ -20,8 +20,9 @@ const PRICES = {
 
 // Discount rules: (sensor_selection) × (valid code) → discount amount
 const DISCOUNT_RULES = {
-  none: 3000.00,        // Kit only + code
-  stickem: 6000.00,     // Kit + Stick'Em sensor + code
+  none: 3000,        // Kit only + code
+  stickem: 6000,     // Kit + Stick'Em sensor + code
+  generic: 4500,     // Kit + Generic sensor + code
 };
 
 const PROMO_CODE = 'ROBOTSTICKS25'; // placeholder, team to confirm
@@ -576,11 +577,11 @@ const KitCheckout = () => {
               </thead>
               <tbody>
                 {[
-                  { path: 'A', cart: "Robotics Kit only", code: 'No', total: 37633.73, color: null },
-                  { path: 'B', cart: "Robotics Kit + Stick 'Em Sensor Kit", code: 'No', total: 47042.16, color: null },
-                  { path: 'C', cart: "Robotics Kit + Stick 'Em Sensor Kit", code: '✓ Yes (-6,000)', total: 41042.16, color: 'var(--stickem-green)' },
-                  { path: 'D', cart: "Robotics Kit only", code: '✓ Yes (-3,000)', total: 34633.73, color: 'var(--stickem-green)' },
-                  { path: 'E', cart: "Robotics Kit + Generic Sensor Kit", code: '✓ Yes (-4,500)', total: 36133.73, color: 'var(--stickem-green)' },
+                  { path: 'A', cart: "Robotics Kit only", code: 'No', total: 37700, color: null },
+                  { path: 'B', cart: "Robotics Kit + Stick 'Em Sensor Kit", code: 'No', total: 47100, color: null },
+                  { path: 'C', cart: "Robotics Kit + Stick 'Em Sensor Kit", code: '✓ Yes (-6,000)', total: 41100, color: 'var(--stickem-green)' },
+                  { path: 'D', cart: "Robotics Kit only", code: '✓ Yes (-3,000)', total: 34700, color: 'var(--stickem-green)' },
+                  { path: 'E', cart: "Robotics Kit + Generic Sensor Kit", code: '✓ Yes (-4,500)', total: 36200, color: 'var(--stickem-green)' },
                 ].map((row, i) => (
                   <tr key={row.path} style={{ borderBottom: '1px solid rgba(0,0,0,0.05)', background: i % 2 === 0 ? 'transparent' : 'rgba(0,0,0,0.015)' }}>
                     <td style={{ padding: '0.85rem 1rem', fontWeight: 700, color: '#8b5cf6' }}>Path {row.path}</td>
