@@ -101,6 +101,17 @@ const recordingDays = [
       { id: '_eJoWleqt7c', title: 'Age 17–19 Advanced', subtitle: 'English Medium · Sep 19 · Session 02' },
     ],
   },
+  {
+    day: 'Day 03',
+    title: 'Session 03 - September 27, 2025',
+    sinhala: [
+      { id: '3CgwFBQag54', title: 'Age 7–10 Kids STEAM', subtitle: 'Sinhala Medium · Sep 27 · Session 03' },
+      { id: '2U9Ce0UgX_Q', title: 'Age 11–13 Junior', subtitle: 'Sinhala Medium · Sep 27 · Session 03' },
+      { id: 'HHM7ZtnPYWM', title: 'Age 14–16 Senior', subtitle: 'Sinhala Medium · Sep 27 · Session 03' },
+      { id: 'zWqxoAK48to', title: 'Age 17–19 Advanced', subtitle: 'Sinhala Medium · Sep 27 · Session 03' },
+    ],
+    english: [],
+  },
 ];
 
 // ─── Video Card ───────────────────────────────────────────────────────────────
@@ -181,6 +192,13 @@ const Recordings = ({ programId, hideHeader }) => {
       english: day.english.filter(v => v.title.includes(searchTerm)),
     };
   }).filter(day => day.sinhala.length > 0 || day.english.length > 0);
+
+  const ageCategories = [
+    'Age 7–10 Kids STEAM',
+    'Age 11–13 Junior',
+    'Age 14–16 Senior',
+    'Age 17–19 Advanced',
+  ];
 
   return (
     <div style={{ minHeight: hideHeader ? 'auto' : '100vh', background: 'var(--light-bg)' }}>
@@ -451,16 +469,29 @@ const Recordings = ({ programId, hideHeader }) => {
                     </p>
                   </div>
                 </div>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                  gap: '1.5rem',
-                }}>
-                  {filteredRecordingDays.flatMap(day => 
-                    day.sinhala.map((video, vi) => (
-                      <VideoCard key={`sinhala-${day.day}-${vi}`} video={video} index={vi} accentColor="var(--stickem-green)" />
-                    ))
-                  )}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                  {ageCategories.map(category => {
+                    const videos = filteredRecordingDays.flatMap(day => 
+                      day.sinhala.filter(v => v.title === category)
+                    );
+                    if (videos.length === 0) return null;
+                    return (
+                      <div key={`sinhala-${category}`}>
+                        <h4 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1.2rem', color: 'var(--dark-text)', marginBottom: '1.25rem', borderBottom: '2px solid var(--glass-border)', paddingBottom: '0.5rem' }}>
+                          {category} Robotics and AI Level 01 Recordings
+                        </h4>
+                        <div style={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                          gap: '1.5rem',
+                        }}>
+                          {videos.map((video, vi) => (
+                            <VideoCard key={`sinhala-${category}-${vi}`} video={video} index={vi} accentColor="var(--stickem-green)" />
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -479,16 +510,29 @@ const Recordings = ({ programId, hideHeader }) => {
                     </p>
                   </div>
                 </div>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                  gap: '1.5rem',
-                }}>
-                  {filteredRecordingDays.flatMap(day => 
-                    day.english.map((video, vi) => (
-                      <VideoCard key={`english-${day.day}-${vi}`} video={video} index={vi} accentColor="var(--stickem-blue)" />
-                    ))
-                  )}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+                  {ageCategories.map(category => {
+                    const videos = filteredRecordingDays.flatMap(day => 
+                      day.english.filter(v => v.title === category)
+                    );
+                    if (videos.length === 0) return null;
+                    return (
+                      <div key={`english-${category}`}>
+                        <h4 style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 700, fontSize: '1.2rem', color: 'var(--dark-text)', marginBottom: '1.25rem', borderBottom: '2px solid var(--glass-border)', paddingBottom: '0.5rem' }}>
+                          {category} Robotics and AI Level 01 Recordings
+                        </h4>
+                        <div style={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                          gap: '1.5rem',
+                        }}>
+                          {videos.map((video, vi) => (
+                            <VideoCard key={`english-${category}-${vi}`} video={video} index={vi} accentColor="var(--stickem-blue)" />
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
