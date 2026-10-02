@@ -371,8 +371,9 @@ a { text-decoration: none; color: inherit; }
 .packages-header h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
 .packages-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(320px, 480px));
+  justify-content: center;
+  gap: 2.5rem;
 }
 .package-card {
   padding: 2rem;
