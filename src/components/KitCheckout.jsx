@@ -29,9 +29,8 @@ const PROMO_CODE = 'ROBOTSTICKS25'; // placeholder, team to confirm
 
 const programs = [
   { id: 'kids-steam', label: 'Kids STEAM (Ages 7–10)', noSensor: true },
-  { id: 'junior-robotics', label: 'Junior Robotics & AI (Ages 11–13)', noSensor: false },
-  { id: 'senior-robotics', label: 'Senior Robotics & AI (Ages 14–16)', noSensor: false },
-  { id: 'advanced-robotics', label: 'Advanced Robotics & AI (Ages 17–19)', noSensor: false },
+  { id: 'junior-robotics', label: 'Junior Robotics & AI (Ages 11–15)', noSensor: false },
+  { id: 'advanced-robotics', label: 'Advanced Robotics & AI (Ages 16–19)', noSensor: false },
 ];
 
 const fmt = (amount) => {

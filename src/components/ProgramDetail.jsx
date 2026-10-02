@@ -35,7 +35,7 @@ const programsData = {
   },
   'junior-robotics': {
     id: 2,
-    badge: 'Ages 11–13',
+    badge: 'Ages 11–15',
     title: 'Junior Robotics & AI',
     hook: 'From curious builder to confident innovator.',
     tagline: '6 months · Month 1 Free',
@@ -52,28 +52,9 @@ const programsData = {
       'Team-based problem solving'
     ]
   },
-  'senior-robotics': {
-    id: 3,
-    badge: 'Ages 14–16',
-    title: 'Senior Robotics & AI',
-    hook: 'Engineer it. Design it. Pitch it like a founder.',
-    tagline: '6 months · Month 1 Free',
-    color: 'var(--stickem-blue)',
-    prices: { online: '4,000 LKR', physical: '6,000 LKR' },
-    seats: {
-      online: { max: 50, taken: 35, label: 'Online Seats' },
-      physical: { max: 40, taken: 30, label: 'Physical Seats' }
-    },
-    includes: [
-      'Advanced robotics mechanics',
-      'Introduction to AI and machine learning concepts',
-      'Product design and pitching',
-      'Real-world industry applications'
-    ]
-  },
   'advanced-robotics': {
     id: 4,
-    badge: 'Ages 17–19',
+    badge: 'Ages 16–19',
     title: 'Advanced Robotics & AI',
     hook: 'Your innovation accelerator before university.',
     tagline: '6 months · Month 1 Free',

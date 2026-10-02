@@ -62,7 +62,7 @@ const ProgramsOverview = () => {
     {
       id: 'junior-robotics',
       displayId: 2,
-      badge: 'Ages 11–13',
+      badge: 'Ages 11–15',
       title: 'Junior Robotics & AI',
       hook: 'From curious builder to confident innovator.',
       tagline: '6 months · Month 1 Free',
@@ -74,23 +74,9 @@ const ProgramsOverview = () => {
       ]
     },
     {
-      id: 'senior-robotics',
-      displayId: 3,
-      badge: 'Ages 14–16',
-      title: 'Senior Robotics & AI',
-      hook: 'Engineer it. Design it. Pitch it like a founder.',
-      tagline: '6 months · Month 1 Free',
-      mascotMsg: 'Time to engineer something real.',
-      color: 'var(--stickem-blue)',
-      seats: [
-        { label: 'Online', taken: 35, max: 50 },
-        { label: 'Physical', taken: 30, max: 40 }
-      ]
-    },
-    {
       id: 'advanced-robotics',
       displayId: 4,
-      badge: 'Ages 17–19',
+      badge: 'Ages 16–19',
       title: 'Advanced Robotics & AI',
       hook: 'Your innovation accelerator before university.',
       tagline: '6 months · Month 1 Free',
