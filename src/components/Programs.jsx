@@ -55,8 +55,8 @@ const ProgramsOverview = () => {
       mascotMsg: "Let's go build something!",
       color: '#8b5cf6',
       seats: [
-        { label: 'Online', taken: 45, max: 60 },
-        { label: 'Physical', taken: 35, max: 40 }
+        { label: 'Online', taken: 18, max: 40 },
+        { label: 'Physical', taken: 22, max: 40 }
       ]
     },
     {
@@ -69,8 +69,8 @@ const ProgramsOverview = () => {
       mascotMsg: 'Ready to code your first robot?',
       color: 'var(--stickem-green)',
       seats: [
-        { label: 'Online', taken: 55, max: 70 },
-        { label: 'Physical', taken: 35, max: 40 }
+        { label: 'Online', taken: 15, max: 40 },
+        { label: 'Physical', taken: 24, max: 40 }
       ]
     },
     {
@@ -83,8 +83,8 @@ const ProgramsOverview = () => {
       mascotMsg: 'Let\'s ship your first product.',
       color: 'var(--stickem-red)',
       seats: [
-        { label: 'Online', taken: 12, max: 20 },
-        { label: 'Physical', taken: 8, max: 40 }
+        { label: 'Online', taken: 12, max: 40 },
+        { label: 'Physical', taken: 14, max: 40 }
       ]
     }
   ];

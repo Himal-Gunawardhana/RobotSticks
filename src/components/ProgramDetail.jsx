@@ -23,8 +23,8 @@ const programsData = {
     color: '#8b5cf6',
     prices: { online: '3,000 LKR', physical: '5,000 LKR' },
     seats: {
-      online: { max: 60, taken: 45, label: 'Online Seats' },
-      physical: { max: 40, taken: 35, label: 'Physical Seats' }
+      online: { max: 40, taken: 18, label: 'Online Seats' },
+      physical: { max: 40, taken: 22, label: 'Physical Seats' }
     },
     includes: [
       'Introduction to structures and mechanisms',
@@ -42,8 +42,8 @@ const programsData = {
     color: 'var(--stickem-green)',
     prices: { online: '4,000 LKR', physical: '6,000 LKR' },
     seats: {
-      online: { max: 70, taken: 55, label: 'Online Seats' },
-      physical: { max: 40, taken: 35, label: 'Physical Seats' }
+      online: { max: 40, taken: 15, label: 'Online Seats' },
+      physical: { max: 40, taken: 24, label: 'Physical Seats' }
     },
     includes: [
       'Programming basics and logic',
@@ -61,8 +61,8 @@ const programsData = {
     color: 'var(--stickem-red)',
     prices: { online: '4,500 LKR', physical: '6,500 LKR' },
     seats: {
-      online: { max: 20, taken: 12, label: 'Online Seats' },
-      physical: { max: 40, taken: 8, label: 'Physical Seats' }
+      online: { max: 40, taken: 12, label: 'Online Seats' },
+      physical: { max: 40, taken: 14, label: 'Physical Seats' }
     },
     includes: [
       'Complex systems engineering',
