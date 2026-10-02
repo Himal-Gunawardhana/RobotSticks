@@ -56,7 +56,7 @@ const packages = [
     id: 2,
     name: 'Junior Robotics & AI',
     tagline: '6 Months • 1st Month Free',
-    grade: 'Age 11-13',
+    grade: 'Age 11-15',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-green)',
     emoji: <img src={bot17} alt="bot" style={{ width: '48px', height: 'auto' }} />,
@@ -91,47 +91,10 @@ const packages = [
     ],
   },
   {
-    id: 3,
-    name: 'Senior Robotics & AI',
-    tagline: '6 Months • 1st Month Free',
-    grade: 'Age 14-16',
-    location: 'Online / Physical (WP & SP)',
-    color: 'var(--stickem-blue)',
-    emoji: <img src={bot18} alt="bot" style={{ width: '48px', height: 'auto' }} />,
-    pricingOptions: [
-      {
-        type: 'Online Plan',
-        original: '25,000',
-        discounted: '20,000',
-        unit: 'LKR',
-        seatsMax: 50,
-        seatsTaken: 35,
-        seatLabel: 'Online Seats'
-      },
-      {
-        type: 'Physical Plan',
-        original: '35,000',
-        discounted: '30,000',
-        unit: 'LKR',
-        seatsMax: 40,
-        seatsTaken: 30,
-        seatLabel: 'Physical Seats'
-      }
-    ],
-    features: [
-      '1st month completely FREE & Online for everyone',
-      'Online Plan: Buy kit individually or share with 4 friends',
-      'Physical Plan: Kits provided (1 kit per 4 students)',
-      'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
-      'Payable in 6 easy installments',
-      'Mechanical Design & Programming Control Flow'
-    ],
-  },
-  {
     id: 4,
     name: 'Advanced Robotics & AI',
     tagline: '6 Months • 1st Month Free',
-    grade: 'Age 17-19',
+    grade: 'Age 16-19',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-red)',
     emoji: <img src={bot19} alt="bot" style={{ width: '48px', height: 'auto' }} />,
