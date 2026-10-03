@@ -33,7 +33,7 @@ const Navbar = () => {
           <motion.img
             src="/logo.png"
             alt="RobotSticks Logo"
-            style={{ height: '42px' }}
+            style={{ height: '60px' }}
             whileHover={{ scale: 1.08, rotate: -3 }}
             transition={{ type: 'spring', stiffness: 300 }}
           />

@@ -547,7 +547,7 @@ const Recordings = ({ programId, hideHeader }) => {
             <motion.img
               src="/logo.png"
               alt="RobotSticks Logo"
-              style={{ height: '52px' }}
+              style={{ height: '80px' }}
               whileHover={{ rotate: -5, scale: 1.1 }}
               transition={{ type: 'spring', stiffness: 300 }}
             />
