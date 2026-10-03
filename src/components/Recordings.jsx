@@ -206,211 +206,211 @@ const Recordings = ({ programId, hideHeader }) => {
 
       {/* Hero Banner */}
       {!hideHeader && (
-      <section style={{
-        paddingTop: '140px',
-        paddingBottom: '5rem',
-        background: 'linear-gradient(135deg, #0F172A 0%, #1e2d4a 50%, #2B6BA7 100%)',
-        position: 'relative',
-        overflow: 'hidden',
-      }}>
-        {[
-          { w: 400, h: 400, top: '-10%', left: '-5%', color: 'var(--stickem-blue)', op: 0.12 },
-          { w: 300, h: 300, bottom: '-10%', right: '5%', color: 'var(--stickem-yellow)', op: 0.1 },
-          { w: 200, h: 200, top: '30%', right: '20%', color: 'var(--stickem-red)', op: 0.08 },
-        ].map((b, i) => (
-          <motion.div
-            key={i}
-            animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
-            transition={{ duration: 12 + i * 4, repeat: Infinity, ease: 'linear' }}
-            style={{
-              position: 'absolute',
-              width: b.w, height: b.h,
-              borderRadius: '50%',
-              background: b.color,
-              opacity: b.op,
-              top: b.top, bottom: b.bottom,
-              left: b.left, right: b.right,
-              filter: 'blur(60px)',
-              pointerEvents: 'none',
-            }}
-          />
-        ))}
+        <section style={{
+          paddingTop: '140px',
+          paddingBottom: '5rem',
+          background: 'linear-gradient(135deg, #0F172A 0%, #1e2d4a 50%, #2B6BA7 100%)',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          {[
+            { w: 400, h: 400, top: '-10%', left: '-5%', color: 'var(--stickem-blue)', op: 0.12 },
+            { w: 300, h: 300, bottom: '-10%', right: '5%', color: 'var(--stickem-yellow)', op: 0.1 },
+            { w: 200, h: 200, top: '30%', right: '20%', color: 'var(--stickem-red)', op: 0.08 },
+          ].map((b, i) => (
+            <motion.div
+              key={i}
+              animate={{ scale: [1, 1.15, 1], rotate: [0, 180, 360] }}
+              transition={{ duration: 12 + i * 4, repeat: Infinity, ease: 'linear' }}
+              style={{
+                position: 'absolute',
+                width: b.w, height: b.h,
+                borderRadius: '50%',
+                background: b.color,
+                opacity: b.op,
+                top: b.top, bottom: b.bottom,
+                left: b.left, right: b.right,
+                filter: 'blur(60px)',
+                pointerEvents: 'none',
+              }}
+            />
+          ))}
 
-        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              background: 'var(--stickem-yellow)', color: '#0F172A',
-              borderRadius: '0.5rem', padding: '0.35rem 1rem',
-              fontWeight: 700, fontSize: '0.85rem',
-              border: '2px solid rgba(0,0,0,0.2)',
-              boxShadow: '3px 3px 0 rgba(0,0,0,0.2)',
-              fontFamily: 'Outfit, sans-serif',
-              marginBottom: '1.5rem',
-            }}
-          >
-            🎥 Class Recordings
-          </motion.div>
+          <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                background: 'var(--stickem-yellow)', color: '#0F172A',
+                borderRadius: '0.5rem', padding: '0.35rem 1rem',
+                fontWeight: 700, fontSize: '0.85rem',
+                border: '2px solid rgba(0,0,0,0.2)',
+                boxShadow: '3px 3px 0 rgba(0,0,0,0.2)',
+                fontFamily: 'Outfit, sans-serif',
+                marginBottom: '1.5rem',
+              }}
+            >
+              🎥 Class Recordings
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            style={{
-              fontFamily: 'Outfit, sans-serif',
-              fontSize: 'clamp(2.2rem, 5vw, 4rem)',
-              fontWeight: 800,
-              color: 'white',
-              lineHeight: 1.15,
-              marginBottom: '1.25rem',
-            }}
-          >
-            Recordings by{' '}
-            <span style={{ color: 'var(--stickem-yellow)' }}>RobotSticks</span>
-          </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{
+                fontFamily: 'Outfit, sans-serif',
+                fontSize: 'clamp(2.2rem, 5vw, 4rem)',
+                fontWeight: 800,
+                color: 'white',
+                lineHeight: 1.15,
+                marginBottom: '1.25rem',
+              }}
+            >
+              Recordings by{' '}
+              <span style={{ color: 'var(--stickem-yellow)' }}>RobotSticks</span>
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            style={{
-              fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-              color: 'rgba(255,255,255,0.75)',
-              maxWidth: 620,
-              margin: '0 auto 2rem',
-              lineHeight: 1.8,
-            }}
-          >
-            Watch all your free STEAM Robotics & AI session recordings - Sinhala and English medium - right here, anytime.
-          </motion.p>
-        </div>
-      </section>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+                color: 'rgba(255,255,255,0.75)',
+                maxWidth: 620,
+                margin: '0 auto 2rem',
+                lineHeight: 1.8,
+              }}
+            >
+              Watch all your free STEAM Robotics & AI session recordings - Sinhala and English medium - right here, anytime.
+            </motion.p>
+          </div>
+        </section>
       )}
 
       {/* Social Media Section */}
       {!hideHeader && (
-      <section style={{
-        padding: '5rem 0',
-        background: 'var(--lighter-bg)',
-        borderTop: '2px solid var(--glass-border)',
-        borderBottom: '2px solid var(--glass-border)',
-      }}>
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            style={{ textAlign: 'center', marginBottom: '3.5rem' }}
-          >
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              background: 'var(--stickem-purple)', color: 'white',
-              borderRadius: '0.5rem', padding: '0.35rem 1rem',
-              fontWeight: 700, fontSize: '0.85rem',
-              border: '2px solid rgba(0,0,0,0.15)',
-              boxShadow: '3px 3px 0 rgba(0,0,0,0.15)',
-              fontFamily: 'Outfit, sans-serif',
-              marginBottom: '1rem',
-            }}>
-              📱 Follow Us
-            </div>
-            <h2 style={{
-              fontFamily: 'Outfit, sans-serif',
-              fontSize: 'clamp(1.8rem, 4vw, 2.75rem)',
-              fontWeight: 800,
-              color: 'var(--dark-text)',
-              marginBottom: '0.75rem',
-            }}>
-              Stay Connected on{' '}
-              <span style={{ color: 'var(--stickem-blue)' }}>Social Media</span>
-            </h2>
-            <p style={{ color: 'rgba(15,23,42,0.65)', fontSize: '1.05rem', maxWidth: 520, margin: '0 auto' }}>
-              Follow RobotSticks for the latest updates, tips, and behind-the-scenes content.
-            </p>
-          </motion.div>
+        <section style={{
+          padding: '5rem 0',
+          background: 'var(--lighter-bg)',
+          borderTop: '2px solid var(--glass-border)',
+          borderBottom: '2px solid var(--glass-border)',
+        }}>
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              style={{ textAlign: 'center', marginBottom: '3.5rem' }}
+            >
+              <div style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
+                background: 'var(--stickem-purple)', color: 'white',
+                borderRadius: '0.5rem', padding: '0.35rem 1rem',
+                fontWeight: 700, fontSize: '0.85rem',
+                border: '2px solid rgba(0,0,0,0.15)',
+                boxShadow: '3px 3px 0 rgba(0,0,0,0.15)',
+                fontFamily: 'Outfit, sans-serif',
+                marginBottom: '1rem',
+              }}>
+                📱 Follow Us
+              </div>
+              <h2 style={{
+                fontFamily: 'Outfit, sans-serif',
+                fontSize: 'clamp(1.8rem, 4vw, 2.75rem)',
+                fontWeight: 800,
+                color: 'var(--dark-text)',
+                marginBottom: '0.75rem',
+              }}>
+                Stay Connected on{' '}
+                <span style={{ color: 'var(--stickem-blue)' }}>Social Media</span>
+              </h2>
+              <p style={{ color: 'rgba(15,23,42,0.65)', fontSize: '1.05rem', maxWidth: 520, margin: '0 auto' }}>
+                Follow RobotSticks for the latest updates, tips, and behind-the-scenes content.
+              </p>
+            </motion.div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '1.5rem',
-          }}>
-            {socialLinks.map((s, i) => (
-              <motion.a
-                key={s.id}
-                href={s.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1, duration: 0.5 }}
-                whileHover={{ y: -6 }}
-                whileTap={{ scale: 0.97 }}
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  gap: '1rem',
-                  padding: '2rem 1.5rem',
-                  borderRadius: '1.25rem',
-                  background: 'white',
-                  border: '2px solid var(--glass-border)',
-                  boxShadow: '6px 6px 0px rgba(0,0,0,0.08)',
-                  textDecoration: 'none',
-                  cursor: 'pointer',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'box-shadow 0.25s',
-                }}
-              >
-                <div style={{
-                  position: 'absolute', top: 0, left: 0, right: 0,
-                  height: '5px',
-                  background: s.bg,
-                }} />
-                <div style={{
-                  width: 72, height: 72,
-                  borderRadius: '50%',
-                  background: s.bg,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'white',
-                  boxShadow: `0 8px 24px ${s.shadowColor}`,
-                  flexShrink: 0,
-                }}>
-                  {s.icon}
-                </div>
-                <div style={{ textAlign: 'center' }}>
-                  <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.2rem', color: 'var(--dark-text)', marginBottom: '0.2rem' }}>
-                    {s.name}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '1.5rem',
+            }}>
+              {socialLinks.map((s, i) => (
+                <motion.a
+                  key={s.id}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -6 }}
+                  whileTap={{ scale: 0.97 }}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    padding: '2rem 1.5rem',
+                    borderRadius: '1.25rem',
+                    background: 'white',
+                    border: '2px solid var(--glass-border)',
+                    boxShadow: '6px 6px 0px rgba(0,0,0,0.08)',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    transition: 'box-shadow 0.25s',
+                  }}
+                >
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0,
+                    height: '5px',
+                    background: s.bg,
+                  }} />
+                  <div style={{
+                    width: 72, height: 72,
+                    borderRadius: '50%',
+                    background: s.bg,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'white',
+                    boxShadow: `0 8px 24px ${s.shadowColor}`,
+                    flexShrink: 0,
+                  }}>
+                    {s.icon}
                   </div>
-                  <div style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.55)', fontWeight: 500 }}>
-                    {s.handle}
+                  <div style={{ textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.2rem', color: 'var(--dark-text)', marginBottom: '0.2rem' }}>
+                      {s.name}
+                    </div>
+                    <div style={{ fontSize: '0.85rem', color: 'rgba(15,23,42,0.55)', fontWeight: 500 }}>
+                      {s.handle}
+                    </div>
                   </div>
-                </div>
-                <div style={{
-                  background: s.bg,
-                  color: 'white',
-                  borderRadius: '0.5rem',
-                  padding: '0.4rem 1.25rem',
-                  fontWeight: 700,
-                  fontSize: '0.85rem',
-                  fontFamily: 'Outfit, sans-serif',
-                  border: '2px solid rgba(0,0,0,0.1)',
-                  boxShadow: '3px 3px 0 rgba(0,0,0,0.1)',
-                }}>
-                  {s.cta} →
-                </div>
-              </motion.a>
-            ))}
+                  <div style={{
+                    background: s.bg,
+                    color: 'white',
+                    borderRadius: '0.5rem',
+                    padding: '0.4rem 1.25rem',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    fontFamily: 'Outfit, sans-serif',
+                    border: '2px solid rgba(0,0,0,0.1)',
+                    boxShadow: '3px 3px 0 rgba(0,0,0,0.1)',
+                  }}>
+                    {s.cta} →
+                  </div>
+                </motion.a>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       )}
 
       {/* Recordings Section */}
@@ -471,7 +471,7 @@ const Recordings = ({ programId, hideHeader }) => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
                   {ageCategories.map(category => {
-                    const videos = filteredRecordingDays.flatMap(day => 
+                    const videos = filteredRecordingDays.flatMap(day =>
                       day.sinhala.filter(v => v.title === category)
                     );
                     if (videos.length === 0) return null;
@@ -512,7 +512,7 @@ const Recordings = ({ programId, hideHeader }) => {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
                   {ageCategories.map(category => {
-                    const videos = filteredRecordingDays.flatMap(day => 
+                    const videos = filteredRecordingDays.flatMap(day =>
                       day.english.filter(v => v.title === category)
                     );
                     if (videos.length === 0) return null;
@@ -542,26 +542,26 @@ const Recordings = ({ programId, hideHeader }) => {
 
       {/* Footer */}
       {!hideHeader && (
-      <footer className="footer">
-        <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
-          <motion.img
-            src="/Logo.svg"
-            alt="RobotSticks Logo"
-            style={{ height: '52px' }}
-            whileHover={{ rotate: -5, scale: 1.1 }}
-            transition={{ type: 'spring', stiffness: 300 }}
-          />
-          <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', fontSize: '0.9rem', fontWeight: 500 }}>
-            <a href="/" style={{ color: 'rgba(15,23,42,0.6)' }}>Home</a>
-            <a href="/#partnership" style={{ color: 'rgba(15,23,42,0.6)' }}>Partnership</a>
-            <a href="/#packages" style={{ color: 'rgba(15,23,42,0.6)' }}>Packages</a>
-            <a href="https://forms.gle/6wwrdLxbqCtPyiAy5" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(15,23,42,0.6)' }}>Register</a>
+        <footer className="footer">
+          <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.75rem' }}>
+            <motion.img
+              src="/logo.png"
+              alt="RobotSticks Logo"
+              style={{ height: '52px' }}
+              whileHover={{ rotate: -5, scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            />
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', justifyContent: 'center', fontSize: '0.9rem', fontWeight: 500 }}>
+              <a href="/" style={{ color: 'rgba(15,23,42,0.6)' }}>Home</a>
+              <a href="/#partnership" style={{ color: 'rgba(15,23,42,0.6)' }}>Partnership</a>
+              <a href="/#packages" style={{ color: 'rgba(15,23,42,0.6)' }}>Packages</a>
+              <a href="https://forms.gle/6wwrdLxbqCtPyiAy5" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(15,23,42,0.6)' }}>Register</a>
+            </div>
+            <p style={{ color: 'rgba(15,23,42,0.4)', fontSize: '0.85rem' }}>
+              © {new Date().getFullYear()} RobotSticks Academy. All rights reserved.
+            </p>
           </div>
-          <p style={{ color: 'rgba(15,23,42,0.4)', fontSize: '0.85rem' }}>
-            © {new Date().getFullYear()} RobotSticks Academy. All rights reserved.
-          </p>
-        </div>
-      </footer>
+        </footer>
       )}
 
       {!hideHeader && <WhatsAppButton />}

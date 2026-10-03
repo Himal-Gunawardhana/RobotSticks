@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="container navbar-inner" style={{ padding: scrolled ? '0.75rem 1.5rem' : '1rem 1.5rem', transition: 'padding 0.3s' }}>
         <a href="#" style={{ display: 'flex', alignItems: 'center' }}>
           <motion.img
-            src="/Logo.svg"
+            src="/logo.png"
             alt="RobotSticks Logo"
             style={{ height: '42px' }}
             whileHover={{ scale: 1.08, rotate: -3 }}
