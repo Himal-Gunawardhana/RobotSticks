@@ -94,7 +94,7 @@ const Hero = () => {
           <motion.div className="hero-buttons" custom={3} variants={textVariants} initial="hidden" animate="visible">
             <motion.button
               className="btn-primary"
-              onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+              onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')}
               whileHover={{ scale: 1.07, rotate: -1 }}
               whileTap={{ scale: 0.94 }}
             >

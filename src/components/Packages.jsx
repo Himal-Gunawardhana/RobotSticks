@@ -17,7 +17,7 @@ const packages = [
   {
     id: 1,
     name: 'Kids STEAM',
-    tagline: '6 Months • 1st Month Free',
+    tagline: '6 Months Course',
     grade: 'Age 7-10',
     location: 'Online / Physical (WP & SP)',
     color: '#8b5cf6',
@@ -44,7 +44,6 @@ const packages = [
       }
     ],
     features: [
-      '1st month completely FREE & Online for everyone',
       'Online Plan: Buy kit individually or share with 4 friends',
       'Physical Plan: Kits provided (1 kit per 4 students)',
       'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
@@ -55,7 +54,7 @@ const packages = [
   {
     id: 2,
     name: 'Junior Robotics & AI',
-    tagline: '6 Months • 1st Month Free',
+    tagline: '6 Months Course',
     grade: 'Age 11-15',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-green)',
@@ -82,7 +81,6 @@ const packages = [
       }
     ],
     features: [
-      '1st month completely FREE & Online for everyone',
       'Online Plan: Buy kit individually or share with 4 friends',
       'Physical Plan: Kits provided (1 kit per 4 students)',
       'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
@@ -93,7 +91,7 @@ const packages = [
   {
     id: 4,
     name: 'Advanced Robotics & AI',
-    tagline: '6 Months • 1st Month Free',
+    tagline: '6 Months Course',
     grade: 'Age 16-19',
     location: 'Online / Physical (WP & SP)',
     color: 'var(--stickem-red)',
@@ -119,7 +117,6 @@ const packages = [
       }
     ],
     features: [
-      '1st month completely FREE & Online for everyone',
       'Online Plan: Buy kit individually or share with 4 friends',
       'Physical Plan: Kits provided (1 kit per 4 students)',
       'Physical Plan: Max 40 students/class (Western & Southern Provinces)',
@@ -314,7 +311,7 @@ const Packages = () => {
                   <motion.button
                     whileHover={{ scale: 1.04, rotate: -1 }}
                     whileTap={{ scale: 0.96 }}
-                    onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                    onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')}
                     style={{
                       width: '100%', padding: '1rem',
                       background: pkg.color, color: 'white',
@@ -323,21 +320,7 @@ const Packages = () => {
                       boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
                     }}
                   >
-                    Enroll for Free Month 1 🎓
-                  </motion.button>
-                  <motion.button
-                    whileHover={{ scale: 1.04, rotate: -1 }}
-                    whileTap={{ scale: 0.96 }}
-                    onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')}
-                    style={{
-                      width: '100%', padding: '0.9rem',
-                      background: 'white', color: pkg.color,
-                      border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
-                      fontFamily: 'Outfit', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer',
-                      boxShadow: `3px 3px 0px rgba(0,0,0,0.1)`, transition: 'all 0.2s'
-                    }}
-                  >
-                    Register for 6-Month Full Course 🚀
+                    Register Now 🚀
                   </motion.button>
                 </div>
               </div>
@@ -453,7 +436,7 @@ const Packages = () => {
                 <motion.button
                   whileHover={{ scale: 1.04, rotate: -1 }}
                   whileTap={{ scale: 0.96 }}
-                  onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                  onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')}
                   style={{
                     width: '100%', padding: '0.7rem',
                     background: pkg.color, color: pkg.id === 3 ? 'var(--dark-text)' : 'white',
@@ -462,21 +445,7 @@ const Packages = () => {
                     boxShadow: `4px 4px 0px rgba(0,0,0,0.2)`, transition: 'all 0.2s'
                   }}
                 >
-                  Enroll for Free Month 1 🎓
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.04, rotate: -1 }}
-                  whileTap={{ scale: 0.96 }}
-                  onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')}
-                  style={{
-                    width: '100%', padding: '0.65rem',
-                    background: 'white', color: pkg.color,
-                    border: `2px solid ${pkg.color}`, borderRadius: '0.5rem',
-                    fontFamily: 'Outfit', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer',
-                    boxShadow: `3px 3px 0px rgba(0,0,0,0.1)`, transition: 'all 0.2s'
-                  }}
-                >
-                  Register for 6-Month Full Course 🚀
+                  Register Now 🚀
                 </motion.button>
               </div>
             </motion.div>

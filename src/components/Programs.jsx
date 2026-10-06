@@ -51,7 +51,7 @@ const ProgramsOverview = () => {
       badge: 'Ages 7–10',
       title: 'Kids STEAM',
       hook: 'Where curious kids become young inventors.',
-      tagline: '6 months · Month 1 Free',
+      tagline: '6 months Course',
       mascotMsg: "Let's go build something!",
       color: '#8b5cf6',
       seats: [
@@ -65,7 +65,7 @@ const ProgramsOverview = () => {
       badge: 'Ages 11–15',
       title: 'Junior Robotics & AI',
       hook: 'From curious builder to confident innovator.',
-      tagline: '6 months · Month 1 Free',
+      tagline: '6 months Course',
       mascotMsg: 'Ready to code your first robot?',
       color: 'var(--stickem-green)',
       seats: [
@@ -79,7 +79,7 @@ const ProgramsOverview = () => {
       badge: 'Ages 16–19',
       title: 'Advanced Robotics & AI',
       hook: 'Your innovation accelerator before university.',
-      tagline: '6 months · Month 1 Free',
+      tagline: '6 months Course',
       mascotMsg: 'Let\'s ship your first product.',
       color: 'var(--stickem-red)',
       seats: [

@@ -289,7 +289,7 @@ const Recordings = ({ programId, hideHeader }) => {
                 lineHeight: 1.8,
               }}
             >
-              Watch all your free STEAM Robotics & AI session recordings - Sinhala and English medium - right here, anytime.
+              Watch all your STEAM Robotics & AI session recordings - Sinhala and English medium - right here, anytime.
             </motion.p>
           </div>
         </section>
@@ -447,10 +447,10 @@ const Recordings = ({ programId, hideHeader }) => {
               color: 'var(--dark-text)',
               marginBottom: '0.75rem',
             }}>
-              Free Month 1 <span style={{ color: 'var(--stickem-red)' }}>Recordings</span>
+              Session <span style={{ color: 'var(--stickem-red)' }}>Recordings</span>
             </h2>
             <p style={{ color: 'rgba(15,23,42,0.65)', fontSize: '1.05rem', maxWidth: 520, margin: '0 auto' }}>
-              Missed a session? No worries - watch all your free Month 1 recordings below, organized by day and medium.
+              Missed a session? No worries - watch all your session recordings below, organized by day and medium.
             </p>
           </motion.div>
 
@@ -560,7 +560,7 @@ const Recordings = ({ programId, hideHeader }) => {
               <a href="/" style={{ color: 'rgba(15,23,42,0.6)' }}>Home</a>
               <a href="/#partnership" style={{ color: 'rgba(15,23,42,0.6)' }}>Partnership</a>
               <a href="/#packages" style={{ color: 'rgba(15,23,42,0.6)' }}>Packages</a>
-              <a href="https://forms.gle/6wwrdLxbqCtPyiAy5" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(15,23,42,0.6)' }}>Register</a>
+              <a href="https://forms.gle/xghHYD4NdqCeUVnU6" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(15,23,42,0.6)' }}>Register</a>
             </div>
             <p style={{ color: 'rgba(15,23,42,0.4)', fontSize: '0.85rem' }}>
               © {new Date().getFullYear()} RobotSticks Academy. All rights reserved.

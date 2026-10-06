@@ -19,7 +19,7 @@ const programsData = {
     badge: 'Ages 7–10',
     title: 'Kids STEAM',
     hook: 'Where curious kids become young inventors.',
-    tagline: '6 months · Month 1 Free',
+    tagline: '6 months Course',
     color: '#8b5cf6',
     prices: { online: '3,000 LKR', physical: '5,000 LKR' },
     seats: {
@@ -38,7 +38,7 @@ const programsData = {
     badge: 'Ages 11–15',
     title: 'Junior Robotics & AI',
     hook: 'From curious builder to confident innovator.',
-    tagline: '6 months · Month 1 Free',
+    tagline: '6 months Course',
     color: 'var(--stickem-green)',
     prices: { online: '4,000 LKR', physical: '6,000 LKR' },
     seats: {
@@ -57,7 +57,7 @@ const programsData = {
     badge: 'Ages 16–19',
     title: 'Advanced Robotics & AI',
     hook: 'Your innovation accelerator before university.',
-    tagline: '6 months · Month 1 Free',
+    tagline: '6 months Course',
     color: 'var(--stickem-red)',
     prices: { online: '4,500 LKR', physical: '6,500 LKR' },
     seats: {
@@ -74,7 +74,7 @@ const programsData = {
 };
 
 const faqs = [
-  { q: 'Do online students need the kit from Day 1?', a: 'Month 1 is free and designed to work without a kit for the first sessions; kit ownership becomes necessary once hands-on building begins. [TO CONFIRM]' },
+  { q: 'Do online students need the kit from Day 1?', a: 'Kit ownership becomes necessary once hands-on building begins. [TO CONFIRM]' },
   { q: 'What happens if someone in my group of 4 drops out before the kit ships?', a: 'Reach out to our team and we\'ll help you find a replacement group member or adjust your order. [TO CONFIRM]' },
   { q: 'Can I switch from Online to Physical (or back) partway through the program?', a: 'Yes, subject to space availability at your chosen location. [TO CONFIRM]' },
   { q: 'Can I pay the full kit price using Koko, or only part of it?', a: 'You can split payments using Koko. [TO CONFIRM with Koko integration]' },
@@ -189,18 +189,10 @@ const ProgramDetail = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')}
                 style={{ width: '100%', padding: '0.8rem', background: program.color, color: 'white', border: 'none', borderRadius: '0.75rem', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}
               >
-                Enroll for Free Month 1
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')}
-                style={{ width: '100%', padding: '0.8rem', background: 'transparent', color: program.color, border: `2px solid ${program.color}`, borderRadius: '0.75rem', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer' }}
-              >
-                Register for 6-Month Full Course
+                Register Now 🚀
               </motion.button>
             </div>
             <Mascot isVisible={showPhysicalBuddy} message="Our kits are already waiting for you here!" position="top-right" imgSrc={bot6} />
@@ -234,18 +226,10 @@ const ProgramDetail = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+                onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')}
                 style={{ width: '100%', padding: '0.8rem', background: program.color, color: 'white', border: 'none', borderRadius: '0.75rem', fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}
               >
-                Enroll for Free Month 1
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')}
-                style={{ width: '100%', padding: '0.8rem', background: 'transparent', color: program.color, border: `2px solid ${program.color}`, borderRadius: '0.75rem', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer' }}
-              >
-                Register for 6-Month Full Course
+                Register Now 🚀
               </motion.button>
             </div>
             <Mascot isVisible={showOnlineBuddy} message="Grab your kit and build right alongside us - live!" position="top-right" imgSrc={bot7} />
@@ -344,16 +328,13 @@ const ProgramDetail = () => {
         <motion.div onViewportEnter={() => setShowFinalBuddy(true)} onViewportLeave={() => setShowFinalBuddy(false)} style={{ position: 'relative', zIndex: 2 }}>
           <h2 style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', marginBottom: '1rem' }}>Let's get building.</h2>
           <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.7)', marginBottom: '3rem' }}>
-            Month 1 is free, however your child joins us.
+            Join us today!
             <br />
             <span style={{ fontSize: '1rem', color: 'var(--stickem-red)', fontWeight: 600 }}>* A one-time registration fee of 1,500 LKR applies.</span>
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', position: 'relative' }}>
-            <button onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')} className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.15rem', background: 'var(--stickem-green)', borderColor: 'var(--stickem-green)' }}>
-              Enrol for Free Month 1
-            </button>
-            <button onClick={() => window.open('https://forms.gle/zqHKhAWueNHBEj4p9', '_blank')} className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.15rem', background: 'transparent', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
-              Register for 6-Month Full Course
+            <button onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')} className="btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.15rem', background: 'var(--stickem-green)', borderColor: 'var(--stickem-green)' }}>
+              Register Now 🚀
             </button>
             <Mascot isVisible={showFinalBuddy} message="I'll save your seat!" position="top-right" imgSrc={bot10} style={{ right: '-30px', top: '-60px' }} />
           </div>

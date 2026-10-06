@@ -88,7 +88,7 @@ const Navbar = () => {
           </motion.div>
           <motion.button
             className="btn-primary"
-            onClick={() => window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank')}
+            onClick={() => window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank')}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -122,7 +122,7 @@ const Navbar = () => {
             <Link to="/programs" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>Programs</Link>
             <Link to="/recordings" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>🎥 Recordings</Link>
             <Link to="/kit" onClick={closeMenu} style={{ fontWeight: 600, fontSize: '1.1rem', color: 'var(--dark-text)', padding: '0.5rem 0', borderBottom: '1px solid var(--glass-border)' }}>🛒 Kit Store</Link>
-            <button className="btn-primary" onClick={() => { closeMenu(); window.open('https://forms.gle/6wwrdLxbqCtPyiAy5', '_blank'); }}>
+            <button className="btn-primary" onClick={() => { closeMenu(); window.open('https://forms.gle/xghHYD4NdqCeUVnU6', '_blank'); }}>
               Register Now 🚀
             </button>
           </motion.div>
