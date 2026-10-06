@@ -110,7 +110,12 @@ const recordingDays = [
       { id: 'HHM7ZtnPYWM', title: 'Age 14–16 Senior', subtitle: 'Sinhala Medium · Sep 27 · Session 03' },
       { id: 'zWqxoAK48to', title: 'Age 17–19 Advanced', subtitle: 'Sinhala Medium · Sep 27 · Session 03' },
     ],
-    english: [],
+    english: [
+      { id: 'ucd08lHyUfU', title: 'Age 7–10 Kids STEAM', subtitle: 'English Medium · Sep 27 · Session 03' },
+      { id: 'X5V0rFfKLro', title: 'Age 11–13 Junior', subtitle: 'English Medium · Sep 27 · Session 03' },
+      { id: 'ODQiJp8YGxU', title: 'Age 14–16 Senior', subtitle: 'English Medium · Sep 26 · Session 03' },
+      { id: 'ODQiJp8YGxU', title: 'Age 17–19 Advanced', subtitle: 'English Medium · Sep 26 · Session 03' },
+    ],
   },
 ];
 
