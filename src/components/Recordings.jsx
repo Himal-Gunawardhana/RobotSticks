@@ -117,6 +117,15 @@ const recordingDays = [
       { id: 'ODQiJp8YGxU', title: 'Age 17–19 Advanced', subtitle: 'English Medium · Sep 26 · Session 03' },
     ],
   },
+  {
+    day: 'Day 04',
+    title: 'Session 04 - October 04, 2025',
+    sinhala: [
+      { id: '7M5OCSXhkKk', title: 'Age 7–10 Kids STEAM', subtitle: 'Sinhala Medium · Oct 04 · Session 04' },
+      { id: 'j4KRW_Q27jc', title: 'Age 11–13 Junior', subtitle: 'Sinhala Medium · Oct 04 · Session 04' },
+    ],
+    english: [],
+  },
 ];
 
 // ─── Video Card ───────────────────────────────────────────────────────────────
