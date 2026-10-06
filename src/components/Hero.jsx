@@ -76,14 +76,14 @@ const Hero = () => {
           </motion.div>
 
           <motion.h1 className="hero-title" custom={1} variants={textVariants} initial="hidden" animate="visible">
-            Empowering the Future with{' '}
+            Sri Lankan Benchmark of{' '}
             <motion.span
               className="text-highlight-red"
               animate={{ scale: [1, 1.03, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
               style={{ display: 'inline-block' }}
             >
-              STEAM Education
+              STEAM Excellence
             </motion.span>
           </motion.h1>
 
